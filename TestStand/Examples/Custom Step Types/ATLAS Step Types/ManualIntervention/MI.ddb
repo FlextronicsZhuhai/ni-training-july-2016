@@ -1,0 +1,58 @@
+
+***
+***
+***     Manual Intervention Data
+dcl {
+	dec     MI_max_time;
+    }
+
+def, mac, EmptyMacro();
+{
+  ;
+}
+
+def, mac, SetMIEvent();
+{
+  ;
+}
+
+def, mac, InxMIEvent(max_time);
+dec max_time;
+{
+  'manual-intervention' = FALSE;         ** Clear RTS
+  MI_max_time = max_time;
+}
+
+def, mac, FthMIEvent(@ evt_indicator);
+bln evt_indicator;
+{
+  while ('manual-intervention' == FALSE)
+  {
+    ;
+  }
+  evt_indicator = 'manual-intervention';
+}
+
+def, mac, RstMIEvent();
+{
+  ;
+}
+
+** Event-Monitor for MANUAL-INTERVENTION
+begin DEV NUL;
+  begin;
+
+    setup   SetMIEvent();
+    init    InxMIEvent(max-time : 0);
+    fetch   FthMIEvent(event-indicator result);
+    reset   RstMIEvent();
+
+    cnx event-out NUL-EV;
+    event monitor ( manual-intervention ) event;
+    control {
+             event-out;
+             event-indicator;
+             max-time max 3000 sec;
+            }
+  end;
+end;

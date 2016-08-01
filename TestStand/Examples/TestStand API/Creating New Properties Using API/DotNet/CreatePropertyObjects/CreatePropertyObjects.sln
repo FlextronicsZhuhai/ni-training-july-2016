@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatePropertyObjects", "CreatePropertyObjects\CreatePropertyObjects.csproj", "{4CAFB159-03E2-458C-9F86-6B3223569075}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CAFB159-03E2-458C-9F86-6B3223569075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CAFB159-03E2-458C-9F86-6B3223569075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CAFB159-03E2-458C-9F86-6B3223569075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CAFB159-03E2-458C-9F86-6B3223569075}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

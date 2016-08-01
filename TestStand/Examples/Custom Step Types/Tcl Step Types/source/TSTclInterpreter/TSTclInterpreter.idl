@@ -1,0 +1,38 @@
+// TSTclInterpreter.idl : IDL source for TSTclInterpreter
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (TSTclInterpreter.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(8513A769-D50B-4B44-9A3F-4A9FF5C62CAB),
+	dual,
+	oleautomation,
+	helpstring("ITclInterpreter Interface"),
+	pointer_default(unique)
+]
+interface ITclInterpreter : IDispatch{
+	[id(1), helpstring("method ExecuteStep")] HRESULT ExecuteStep([in] IDispatch * context);
+	[propget, id(2), helpstring("property ProcessID")] HRESULT ProcessID([out, retval] DWORD* pVal);
+};
+[
+	uuid(22CA287A-FC3E-4E6F-9AA3-BC302A1D2BB1),
+	version(1.0),
+	helpstring("TSTclInterpreter 1.0 Type Library")
+]
+library TSTclInterpreterLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(78ED7630-DF3F-4492-92CE-62FD834751BB),
+		helpstring("TclInterpreter Class")
+	]
+	coclass TclInterpreter
+	{
+		[default] interface ITclInterpreter;
+	};
+};

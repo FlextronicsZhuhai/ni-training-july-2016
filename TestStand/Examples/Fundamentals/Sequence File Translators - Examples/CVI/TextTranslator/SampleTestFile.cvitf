@@ -1,0 +1,3 @@
+CVI Sample Test Description File:4.0.0.0:4.0.0.3
+Display msg to User,MessagePopup,,MessageExpr:string="This example sequence file is stored on disk in text format. The source code for the translator plug-in which converts this format into a sequence file is located in the same directory as this file.The format of this file is documented in TextTranslatorAPI.c",TitleExpr:string="Sequence File Translators"
+Display Graph,DisplayGraph,RMSValue:number=RMSValue,ACValue:number=2

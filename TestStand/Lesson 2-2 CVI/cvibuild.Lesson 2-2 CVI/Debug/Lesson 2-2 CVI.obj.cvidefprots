@@ -1,0 +1,12 @@
+[ControllerBoardTempTest]
+Class="Function"
+Prototype="void ControllerBoardTempTest(char *dmm, char *powerSupply, double lineInVoltage, double *temperature, struct Error *errorInfo);"
+
+[DllMain]
+Class="Function"
+Prototype="int DllMain(struct HINSTANCE__ *hinstDLL, unsigned long fdwReason, void *lpvReserved);"
+
+[DllEntryPoint]
+Class="Function"
+Prototype="int DllEntryPoint(struct HINSTANCE__ *hinstDLL, unsigned long fdwReason, void *lpvReserved);"
+

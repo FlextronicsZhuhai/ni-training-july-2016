@@ -1,0 +1,4 @@
+LIBRARY Lesson_2-2_CVI
+
+EXPORTS
+ControllerBoardTempTest

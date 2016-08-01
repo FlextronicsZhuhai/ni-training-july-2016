@@ -1,0 +1,7 @@
+Important note about CVIDmmTest.prj
+
+If this project file is opened and recompiled it is possible that CVI will issue errors
+about "unable to find ividmm.fp". This is because when installing TestStand, the IVI 
+Compliance Package (ICP) was not installed. In order to properly recompile, users will 
+need to install the IVI Compliance Package (ICP) located on the National Instruments 
+Device Driver CD-ROM that comes with TestStand.

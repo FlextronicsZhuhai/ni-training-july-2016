@@ -1,0 +1,1 @@
+-force-include-file "SolarPanel.c";"c:\dev\TestStand\SolarPanel CVI\SolarPanel.c" -force-include-file "SolarPanel.h";"c:\dev\TestStand\SolarPanel CVI\SolarPanel.h" 

@@ -1,0 +1,44 @@
+// ATLAS_StepType.idl : IDL source for ATLAS_StepType.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ATLAS_StepType.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(3A182B87-0B31-4A40-9DB8-028E01072138),
+	version(1.0),
+	helpstring("NI ATLAS StepType 1.0")
+]
+library ATLAS_STEPTYPELib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	importlib("teapi.dll");
+
+	// Interfaces
+	[
+		object,
+		uuid(054A7221-DADF-42A3-A28B-4024EC57F7B9),
+		dual,
+		helpstring("IExecuteTPS Interface"),
+		pointer_default(unique)
+	]
+	interface IExecuteTPS : IDispatch
+	{
+		[id(1), helpstring("method EditStep")] HRESULT EditStep([in] SequenceContext *sequenceContext, [in] long reserved, [out] long *changeCount);
+		[id(2), helpstring("method ExecuteTPS")] HRESULT ExecuteTPS([in] SequenceContext *sequenceContext);
+	};
+
+	// Component Classes
+	[
+		uuid(FA8E9CC0-1F80-48EE-B121-7EA8C2863AEC),
+		helpstring("ExecuteTPS Class")
+	]
+	coclass ExecuteTPS
+	{
+		[default] interface IExecuteTPS;
+	};
+};

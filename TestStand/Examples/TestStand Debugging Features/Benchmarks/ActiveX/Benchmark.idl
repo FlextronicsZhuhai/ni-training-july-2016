@@ -1,0 +1,44 @@
+// Benchmark.idl : IDL source for Benchmark.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Benchmark.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	
+	[
+		object,
+		uuid(34D43B40-2356-4AA2-8946-A443945265CC),
+		dual,
+		helpstring("IClass Interface"),
+		pointer_default(unique)
+	]
+	interface IClass : IDispatch
+	{
+		[id(1), helpstring("method DoNothing")] HRESULT DoNothing();
+	};
+
+
+
+[
+	uuid(34D43B31-2356-4AA2-8946-A443945265CC),
+	version(1.1),
+	helpstring("zNI TestStand Benchmark Example Server")
+]
+library BENCHMARKLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	
+	[
+		uuid(34D43B41-2356-4AA2-8946-A443945265CC),
+		helpstring("Class Class")
+	]
+	coclass Class
+	{
+		[default] interface IClass;
+	};
+
+};

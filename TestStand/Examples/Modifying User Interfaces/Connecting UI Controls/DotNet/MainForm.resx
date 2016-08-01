@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="axApplicationMgr.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA/gAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAOkAAAAXAQEAAU8DAABPAwAAAQEBAgAAACYAAABDAEUAbgBnAGkAbgBlAEIA
+        aQBuAGQATQBhAG4AYQBnAGUAcgAAAAEAAAADAAAAGAAAAEMAQwBvAG4AZgBpAGcARgBpAGwAZQAAAAEA
+        AAAAAgAAAAEAAgAAAFQAAAAlAFQAZQBzAHQAUwB0AGEAbgBkAEwAbwBjAGEAbABBAHAAcABEAGEAdABh
+        ACUAXABVAHMAZQByAEkAbgB0AGUAcgBmAGEAYwBlAC4AeABtAGwAAAACAAG4CwAAAAMAAAABAAAAAAAA
+        AAAAAQ4AAMQOAADEAQs=
+</value>
+  </data>
+  <data name="axOpenFileButton.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAApwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAJIAAAAXAQEAAKsAAAAZAAAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmAAAAAA8AAIAAAAAAAQAAAAIAAAAAAAAAABQAAABP
+        AFAARQBOAF8ARgBJAEwARQAAAP///wAAAAAAAQAAAAMAAAABAQMAAAAAAAAAAQs=
+</value>
+  </data>
+  <metadata name="GCTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>5, 2</value>
+  </metadata>
+  <data name="axExecutionViewMgr.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAXAAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAEcAAAAXAQEAAU8DAABPAwAAAQIAAAAoAAAAQwBFAHgAZQBEAGkAcwBwAEIA
+        aQBuAGQATQBhAG4AYQBnAGUAcgAAAAEAAAABAQAAAAs=
+</value>
+  </data>
+  <data name="axSequenceFileViewMgr.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAXAAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAEcAAAAXAQEAAU8DAABPAwAAAQIAAAAoAAAAQwBTAGUAcQBEAGkAcwBwAEIA
+        aQBuAGQATQBhAG4AYQBnAGUAcgAAAAEAAAABAQAAAAs=
+</value>
+  </data>
+  <data name="axEntryPoint1Button.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAArQAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAJgAAAAXAQEAAKsAAAAZAAAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmAAAAAA8AAIAAAAAAAQAAAAIAAAAAAAAAABoAAABF
+        AE4AVABSAFkAXwBQAE8ASQBOAFQAMQAAAP///wAAAAAAAQAAAAMAAAABAQMAAAAAAAAAAQs=
+</value>
+  </data>
+  <data name="axRunSelectedButton.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAvwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAKoAAAAXAQEAAKsAAAAZAAAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmAAAAAA8AAIAAAAAAAQAAAAIAAAAAAAAAACwAAABS
+        AFUATgBfAFMARQBMAEUAQwBUAEUARABfAFMARQBRAFUARQBOAEMARQAAAP///wAAAAAAAQAAAAMAAAAB
+        AQMAAAAAAAAAAQs=
+</value>
+  </data>
+  <data name="axSequenceView.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjAUAAAIB
+        AAAAAQAAAAAAAAAAAAAAAHcFAAAXAQEAAO0BAADvAAAAAf//AAD//wAAAAAIAACAgICAAAUAAIDAwMAA
+        AgAAAAADUuMLkY/OEZ3jAKoAS7hRAQAAAJABREIBABRNaWNyb3NvZnQgU2FucyBTZXJpZgMAAAAAA1Lj
+        C5GPzhGd4wCqAEu4UQEAAACQAURCAQAUTWljcm9zb2Z0IFNhbnMgU2VyaWYEAAAAAANS4wuRj84RneMA
+        qgBLuFEBAAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmBQAAAAQAAAAKAAAATgBhAG0AZQAAAAIA
+        AAAAAL4AAAABAQAAAAIAAAAAAAIAAAAAAAoAAABOAGEAbQBlAAAAAAAAABgAAABEAGUAcwBjAHIAaQBw
+        AHQAaQBvAG4AAAACAAAAAAAiAQAAAQMAAAACAAAAAAACAAAAAAAYAAAARABlAHMAYwByAGkAcAB0AGkA
+        bwBuAAAAAAAAAB4AAABFAHgAZQBjAHUAdABpAG8AbgAgAEYAbABvAHcAAAACAAAAAACWAAAAAQQAAAAC
+        AAAAAAACAAAAAAAeAAAARQB4AGUAYwB1AHQAaQBvAG4AIABGAGwAbwB3AAAAAAAAAA4AAABTAHQAYQB0
+        AHUAcwAAAAIAAAAAAHkAAAABBQAAAAIAAAAAADIDAABSAHUAbgBTAHQAYQB0AGUALgBTAHQAZQBwAC4A
+        UgBlAHMAdQBsAHQALgBTAHQAYQB0AHUAcwAgAD0APQAgACIAIgAgAD8AIAAtADEAIAA6ACAAKABSAHUA
+        bgBTAHQAYQB0AGUALgBTAHQAZQBwAC4AUgBlAHMAdQBsAHQALgBTAHQAYQB0AHUAcwAgAD0APQAgACIA
+        RgBhAGkAbABlAGQAIgAgAHwAfAAgAFIAdQBuAFMAdABhAHQAZQAuAFMAdABlAHAALgBSAGUAcwB1AGwA
+        dAAuAFMAdABhAHQAdQBzACAAPQA9ACAAIgBFAHIAcgBvAHIAIgApACAAPwAgAHQAcwBSAGUAZAAgADoA
+        IABSAHUAbgBTAHQAYQB0AGUALgBTAHQAZQBwAC4AUgBlAHMAdQBsAHQALgBTAHQAYQB0AHUAcwAgAD0A
+        PQAgACIAUABhAHMAcwBlAGQAIgAgAD8AIAB0AHMARwByAGUAZQBuACAAOgAgAFIAdQBuAFMAdABhAHQA
+        ZQAuAFMAdABlAHAALgBSAGUAcwB1AGwAdAAuAFMAdABhAHQAdQBzACAAPQA9ACAAIgBTAGsAaQBwAHAA
+        ZQBkACIAIAA/ACAAdABzAEwAaQBnAGgAdABHAHIAYQB5ACAAOgAgACgAUgB1AG4AUwB0AGEAdABlAC4A
+        UwB0AGUAcAAuAFIAZQBzAHUAbAB0AC4AUwB0AGEAdAB1AHMAIAA9AD0AIAAiAFIAdQBuAG4AaQBuAGcA
+        IgAgAAoAIAB8AHwAIABSAHUAbgBTAHQAYQB0AGUALgBTAHQAZQBwAC4AUgBlAHMAdQBsAHQALgBTAHQA
+        YQB0AHUAcwAgAD0APQAgACIATABvAG8AcABpAG4AZwAiACkAIAA/ACAAdABzAE0AYQBnAGUAbgB0AGEA
+        IAA6ACAAUgB1AG4AUwB0AGEAdABlAC4AUwB0AGUAcAAuAFIAZQBzAHUAbAB0AC4AUwB0AGEAdAB1AHMA
+        IAA9AD0AIAAiAFQAZQByAG0AaQBuAGEAdABlAGQAIgAgAD8AIAB0AHMAQgBsAHUAZQAgADoAIAB0AHMA
+        QwB5AGEAbgAAAA4AAABTAHQAYQB0AHUAcwAAAAEAAAABAAIAAAAAAAIAAAAAAAMAAAAAAAAAEAAAAAEA
+        AAABAAAAAQAAAP////8DAAAAAwAAAAEBBAAAAAAAAAAB//8/AAAACw==
+</value>
+  </data>
+  <data name="axBreakResumeButton.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAArQAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAJgAAAAXAQEAAKsAAAAZAAAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmAAAAAA8AAIAAAAAAAQAAAAIAAAAAAAAAABoAAABC
+        AFIARQBBAEsALwBSAEUAUwBVAE0ARQAAAP///wAAAAAAAQAAAAMAAAABAQMAAAAAAAAAAQs=
+</value>
+  </data>
+  <data name="axTerminateRestartButton.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAArQAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAJgAAAAXAQEAAKsAAAAZAAAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmAAAAAA8AAIAAAAAAAQAAAAIAAAAAAAAAABoAAABU
+        AEUAUgBNAC8AUgBFAFMAVABBAFIAVAAAAP///wAAAAAAAQAAAAMAAAABAQMAAAAAAAAAAQs=
+</value>
+  </data>
+  <data name="axSequenceViewExec.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjAUAAAIB
+        AAAAAQAAAAAAAAAAAAAAAHcFAAAXAQEAAPABAADvAAAAAf//AAD//wAAAAAIAACAgICAAAUAAIDAwMAA
+        AgAAAAADUuMLkY/OEZ3jAKoAS7hRAQAAAJABREIBABRNaWNyb3NvZnQgU2FucyBTZXJpZgMAAAAAA1Lj
+        C5GPzhGd4wCqAEu4UQEAAACQAURCAQAUTWljcm9zb2Z0IFNhbnMgU2VyaWYEAAAAAANS4wuRj84RneMA
+        qgBLuFEBAAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmBQAAAAQAAAAKAAAATgBhAG0AZQAAAAIA
+        AAAAAL4AAAABAQAAAAIAAAAAAAIAAAAAAAoAAABOAGEAbQBlAAAAAAAAABgAAABEAGUAcwBjAHIAaQBw
+        AHQAaQBvAG4AAAACAAAAAAAiAQAAAQMAAAACAAAAAAACAAAAAAAYAAAARABlAHMAYwByAGkAcAB0AGkA
+        bwBuAAAAAAAAAB4AAABFAHgAZQBjAHUAdABpAG8AbgAgAEYAbABvAHcAAAACAAAAAACWAAAAAQQAAAAC
+        AAAAAAACAAAAAAAeAAAARQB4AGUAYwB1AHQAaQBvAG4AIABGAGwAbwB3AAAAAAAAAA4AAABTAHQAYQB0
+        AHUAcwAAAAIAAAAAAHkAAAABBQAAAAIAAAAAADIDAABSAHUAbgBTAHQAYQB0AGUALgBTAHQAZQBwAC4A
+        UgBlAHMAdQBsAHQALgBTAHQAYQB0AHUAcwAgAD0APQAgACIAIgAgAD8AIAAtADEAIAA6ACAAKABSAHUA
+        bgBTAHQAYQB0AGUALgBTAHQAZQBwAC4AUgBlAHMAdQBsAHQALgBTAHQAYQB0AHUAcwAgAD0APQAgACIA
+        RgBhAGkAbABlAGQAIgAgAHwAfAAgAFIAdQBuAFMAdABhAHQAZQAuAFMAdABlAHAALgBSAGUAcwB1AGwA
+        dAAuAFMAdABhAHQAdQBzACAAPQA9ACAAIgBFAHIAcgBvAHIAIgApACAAPwAgAHQAcwBSAGUAZAAgADoA
+        IABSAHUAbgBTAHQAYQB0AGUALgBTAHQAZQBwAC4AUgBlAHMAdQBsAHQALgBTAHQAYQB0AHUAcwAgAD0A
+        PQAgACIAUABhAHMAcwBlAGQAIgAgAD8AIAB0AHMARwByAGUAZQBuACAAOgAgAFIAdQBuAFMAdABhAHQA
+        ZQAuAFMAdABlAHAALgBSAGUAcwB1AGwAdAAuAFMAdABhAHQAdQBzACAAPQA9ACAAIgBTAGsAaQBwAHAA
+        ZQBkACIAIAA/ACAAdABzAEwAaQBnAGgAdABHAHIAYQB5ACAAOgAgACgAUgB1AG4AUwB0AGEAdABlAC4A
+        UwB0AGUAcAAuAFIAZQBzAHUAbAB0AC4AUwB0AGEAdAB1AHMAIAA9AD0AIAAiAFIAdQBuAG4AaQBuAGcA
+        IgAgAAoAIAB8AHwAIABSAHUAbgBTAHQAYQB0AGUALgBTAHQAZQBwAC4AUgBlAHMAdQBsAHQALgBTAHQA
+        YQB0AHUAcwAgAD0APQAgACIATABvAG8AcABpAG4AZwAiACkAIAA/ACAAdABzAE0AYQBnAGUAbgB0AGEA
+        IAA6ACAAUgB1AG4AUwB0AGEAdABlAC4AUwB0AGUAcAAuAFIAZQBzAHUAbAB0AC4AUwB0AGEAdAB1AHMA
+        IAA9AD0AIAAiAFQAZQByAG0AaQBuAGEAdABlAGQAIgAgAD8AIAB0AHMAQgBsAHUAZQAgADoAIAB0AHMA
+        QwB5AGEAbgAAAA4AAABTAHQAYQB0AHUAcwAAAAEAAAABAAIAAAAAAAIAAAAAAAMAAAAAAAAAEAAAAAEA
+        AAABAAAAAQAAAP////8DAAAAAwAAAAEBBAAAAAAAAAAB//8/AAAACw==
+</value>
+  </data>
+  <data name="axStatusBar1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAJAEAAAIB
+        AAAAAQAAAAAAAAAAAAAAAA8BAAAXAQEAAVFpAAD3AQAAAQIAAAAEAAAADgAAAFAAYQBuAGUAIAAxAAAA
+        IAAAAAEAAAACAAAAAAAAAAAA//8AAAIAAAAAAA4AAABQAGEAbgBlACAAMgAAACwBAAABAAAAAgAAAAAA
+        AAAAAP//AAACAAAAAAAOAAAAUABhAG4AZQAgADMAAAAgAAAAAQAAAAIAAAAAAAAAAAD//wAAAgAAAAAA
+        DgAAAFAAYQBuAGUAIAA0AAAALAEAAAEAAAACAAAAAAAAAAAA//8AAAIAAAAAAAMAAAAAA1LjC5GPzhGd
+        4wCqAEu4UQEAAACQAURCAQAUTWljcm9zb2Z0IFNhbnMgU2VyaWb//wAAABAAAAABAAAACw==
+</value>
+  </data>
+  <data name="axLabel2.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjQAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAHgAAAAXAQEAAXIEAABYAQAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmEgAAgP///wAAAAAAAQAAABIAAABhAHgATABhAGIA
+        ZQBsADIAAAAAAQAAAAABAAAAAAEL
+</value>
+  </data>
+  <data name="axLabel1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjQAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAHgAAAAXAQEAAXIEAABYAQAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmEgAAgP///wAAAAAAAQAAABIAAABhAHgATABhAGIA
+        ZQBsADEAAAAAAQAAAAABAAAAAAEL
+</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Information Source Connections are used to display caption, image, and numeric information on Label controls, ExpressionEdit controls, and StatusBar panes.
+
+Changing the source Input will change what information is displayed in the connected control. </value>
+  </data>
+  <data name="axButton3.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAApwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAJIAAAAXAQEAAdgTAABhAgAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmEgAAgP///wAAAAAAAQAAAAIAAAACAAAAABQAAABh
+        AHgAQgB1AHQAdABvAG4AMQAAAP///wD///8AAQAAAAMAAAABAQMAAAAAAAAAAQs=
+</value>
+  </data>
+  <data name="axButton2.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAApwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAJIAAAAXAQEAAdgTAABhAgAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmEgAAgP///wAAAAAAAQAAAAIAAAACAAAAABQAAABh
+        AHgAQgB1AHQAdABvAG4AMQAAAP///wD///8AAQAAAAMAAAABAQMAAAAAAAAAAQs=
+</value>
+  </data>
+  <data name="axButton1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAApwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAJIAAAAXAQEAAdgTAABhAgAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmEgAAgP///wAAAAAAAQAAAAIAAAACAAAAABQAAABh
+        AHgAQgB1AHQAdABvAG4AMQAAAP///wD///8AAQAAAAMAAAABAQMAAAAAAAAAAQs=
+</value>
+  </data>
+  <data name="axCheckBox1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAngAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAIkAAAAXAQEAAWQYAABPAwAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmEgAAgP///wAAAAAAAQAAAAEAAAAFAAAAAAAAAAAA
+        GAAAAGEAeABDAGgAZQBjAGsAQgBvAHgAMQAAAP///wAA////AAs=
+</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Command Connections are used to configure a TestStand Button or Checkbox control control to execute a specified command when clicked.  
+
+Change the enumerations to see the behavior of the available command kinds.</value>
+  </data>
+  <data name="axComboBox1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAegAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAGUAAAAXAQEAAYYfAABGAgAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmEgAAgP///wAAAAAAAQAAAAIAAAABAGQAAAAQAAAA
+        AQs=
+</value>
+  </data>
+  <data name="axListBox1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAhQAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAHAAAAAXAQEAARMhAADHEQAAAQH///8CAAAAAANS4wuRj84RneMAqgBLuFEB
+        AAAAkAFEQgEAFE1pY3Jvc29mdCBTYW5zIFNlcmlmCAAAgAUAAIAAAAAAAQAAAAEAAAABAwAAAAQAAAAB
+        AQQAAAAAAAAAAQAACw==
+</value>
+  </data>
+  <data name="axListBar1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAIgEAAAIB
+        AAAAAQAAAAAAAAAAAAAAAA0BAAAXAQEAAbsfAADHEQAAAQIAAAAAA1LjC5GPzhGd4wCqAEu4UQEAAACQ
+        AURCAQAUTWljcm9zb2Z0IFNhbnMgU2VyaWYDAAAAAANS4wuRj84RneMAqgBLuFEBAAAAkAFEQgEAFE1p
+        Y3Jvc29mdCBTYW5zIFNlcmlmAAAAAAAAAADw8PAAAQAAAAEAAAD/////IAAAAAAAAQAAAAEAAAACAAAA
+        DAAAAFAAYQBnAGUAMAAAABYAAABGAGkAcgBzAHQAIABQAGEAZwBlAAAAAAAMAAAAUABhAGcAZQAxAAAA
+        GAAAAFMAZQBjAG8AbgBkACAAUABhAGcAZQAAAP//AwAAAAQAAAABAQQAAAAAAAAAAQs=
+</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>List Connections are used to configure a TestStand ComboBox, ListBarPage, or ListBox to display a TestStand List, such as the sequences in the current file.  
+
+The manager controls provide a separate method for each connection type, so no cmdKind parameter is needed.</value>
+  </data>
+  <data name="axVariablesView.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAANwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAACIAAAAXAQEAAeMwAADXFgAAAQEDAAAABAAAAAEBBAAAAAAAAAABCw==
+</value>
+  </data>
+  <data name="axReportView.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAgQAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAGwAAAAXAQEAAesxAAAUGwAAAQAAAAAJAAAAAQEBAQEBAQEBAQABAAAABQAA
+        gAgAAIABAwAAAAQAAAABAQQAAAAAAAAAAQIAAAAAA1LjC5GPzhGd4wCqAEu4UQEAAACQAdx8AQAHQ291
+        cmllcgsAAAAL
+</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>View Connections are used to activate a SequenceView, VariablesView, or ReportView control. The manager controls provide a separate method for each connection type, so no cmdKind parameter is needed. 
+
+Note: The SequenceView controls are placed outside of the tab control for ease of use.</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>36</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAICAQAAAAAADoAgAAJgAAABAQEAAAAAAAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAIAC
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/
+        AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAd3d3d3d3d3d3d3d3d3dwBEREREREREREREREREREcAT/
+        ////////////////9HAE//////////////////RwBP/////////////////0cAT/////////////////
+        9HAE//////////////////RwBP/////////////////0cAT/////////////////9HAE////////////
+        //////RwBP/////////////////0cAT/////////////////9HAE//////////////////RwBP//////
+        ///////////0cAT/////////////////9HAE//////////////////RwBP/////////////////0cAT/
+        ////////////////9HAE//////////////////RwBP/////////////////0cASIiIiIiIiIiIiIiIiI
+        hHAERERERERERERERERERERwBExMTExMTExMTE7Ozkl0cATMzMzMzMzMzMzMzMzMxAAARERERERERERE
+        REREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////
+        /////////////8AAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAA
+        AAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAA8AAAAf/////////////
+        //8oAAAAEAAAACAAAAABAAQAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAA
+        AACAAIAAgIAAAICAgADAwMAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAB3d3d3d3
+        d3dERERERERER0////////hHT///////+EdP///////4R0////////hHT///////+EdP///////4R0//
+        //////hHT///////+EdIiIiIiIiIR0zMzMzMzMxHxERERERERMAAAAAAAAAAAAAAAAAAAAAA//8AAIAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAD//wAA//8AAA==
+</value>
+  </data>
+</root>

@@ -1,0 +1,57 @@
+
+ 001000 BEGIN, ATLAS PROGRAM 'PARAMETER PASSING EXAMPLE'                            $
+C 
+  ********************************************************************
+  * 			DECLARE VARIABLE STATEMENTS            	     *
+  ********************************************************************
+                                                                                    $
+     10 DECLARE, VARIABLE, 'EXTRACT' IS STRING(50) OF CHAR                          $
+     20 DECLARE, VARIABLE, 'NAME' IS STRING(50) OF CHAR                             $
+     30 DECLARE, VARIABLE, 'VALUE' IS STRING(50) OF CHAR                            $
+     50 DECLARE, VARIABLE, 'DATA CONTAINER PARAMETERS' IS FILE OF TEXT              $
+     60 DECLARE, VARIABLE, 'DATA CONTAINER RESULTS' IS FILE OF TEXT                 $
+C 
+  ********************************************************************
+  *                      MAIN PROCEDURAL SECTION                     *
+  ********************************************************************
+                                                                                    $
+E100000 OUTPUT, TO 'DISPLAY', C'\ESC\[1B\ESC\[40;37mParameter passing example \ESC\[m'
+			    , C'\ESC\[1B' 					    $
+C	Output some passed parameters						    $
+     10 OUTPUT, TO 'DISPLAY', C'TIME-LIMIT: ', 'TIME-LIMIT'                         $
+     20 OUTPUT, TO 'DISPLAY', C'MEASUREMENT: ', 'MEASUREMENT'                       $
+
+C	Change some read/write parameters			    		    $ 
+     30 CALCULATE, 'MAX-TIME' = TRUE                                                $
+     40 CALCULATE, 'MEASUREMENT' = 'MEASUREMENT' - 1                                $
+     50 OUTPUT, TO 'DISPLAY', C'ADJUSTED MEASUREMENT: ', 'MEASUREMENT'              $
+
+C 	Initialize non-global parameters for read and write			    $
+     60 ENABLE, INPUT FROM C'PARAMETERS', VIA 'DATA CONTAINER PARAMETERS'           $
+     70 ENABLE, OUTPUT TO NEW C'RESULTS', VIA 'DATA CONTAINER RESULTS'              $
+
+C	'NAME' stores the name of the non-global parameters 			    $
+     80 CALCULATE, 'NAME' = C''                                                     $
+
+C	Loop over the non-global parameters					    $
+ 100100 WHILE, NOT EOF('DATA CONTAINER PARAMETERS'), THEN                           $
+     10     INPUT, FROM 'DATA CONTAINER PARAMETERS', INTO 'EXTRACT'                 $
+     20     IF, LEN('NAME') EQ 0, THEN                                              $
+C	    	Extract, display and write out name of the parameter		    $
+     30         CALCULATE, 'NAME' = 'EXTRACT'                                       $
+     40         OUTPUT, TO 'DISPLAY', C'', 'NAME':0$
+     50         OUTPUT, TO 'DATA CONTAINER RESULTS', 'NAME':0$
+     60     ELSE                                                                    $
+C               Append ' - checked;' to 'VALUE'                                     $
+     70         CALCULATE, 'VALUE' = 'EXTRACT'                                      $
+     80         CALCULATE, 'VALUE' = INSERT (C' - checked;', 'VALUE', LEN('VALUE')) $
+     90         OUTPUT, TO 'DISPLAY', C': ', 'VALUE'                                $
+ 100200         OUTPUT, TO 'DATA CONTAINER RESULTS', 'VALUE':0$
+     10         CALCULATE, 'NAME' = C''                                             $
+     20     END, IF                                                                 $
+     30 END, WHILE                                                                  $
+
+C	Close parameter containers		                                    $
+ 100300 DISABLE, 'DATA CONTAINER PARAMETERS'                                        $
+     10 DISABLE, 'DATA CONTAINER RESULTS'                                           $
+     20 TERMINATE, ATLAS PROGRAM 'PARAMETER PASSING EXAMPLE'                        $

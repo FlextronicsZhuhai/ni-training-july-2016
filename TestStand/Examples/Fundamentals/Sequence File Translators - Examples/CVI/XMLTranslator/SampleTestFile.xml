@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file>
+<header 
+	description="CVI Sample Test Description File"
+	fileversion="4.0.0.4"
+	fileformatversion="4.0.0.0">
+	
+</header>
+<TestDescription version="1.0">
+	<Sequence name="MainSequence">
+		<Step name="Display msg to User" type="MsgBox">
+			<Data dataProperty="TitleExpr" type = "string">
+				<Value>
+					"Sequence File Translators"
+				</Value>
+			</Data>
+			<Data dataProperty="MessageExpr" type = "string">
+				<Value>
+					"This example sequence file is stored on disk in a xml format. The source code for the translator plug-in which converts this format into a sequence file is located in the same directory as this file.The format of this file is documented in XMLTranslatorAPI.c"
+				</Value>
+			</Data>
+		</Step>
+		<Step name="Display Graph" type="DISPLAYGRAPH">
+			<Data dataProperty="ACValue" type = "number">
+				<Value>
+					2
+				</Value>
+			</Data>
+		<Result dataProperty="RMSValue" value="RMSValue" type="number"/>
+		</Step>
+		</Sequence>
+</TestDescription>
+</file>

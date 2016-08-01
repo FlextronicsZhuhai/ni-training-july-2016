@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SequenceFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Sequence Name="MainSequence">
+    <StepGroup Name="setup">
+      <Step Name="About" Type="MessagePopup" Adapter="None Adapter">
+        <Prop LookupString="MessageExpr">\"This Sequence was generated from an XML file using the TestStand API.\"</Prop>
+      </Step>
+    </StepGroup>
+    <StepGroup Name="main">
+      <Step Name="Test 1" Type="NumericLimitTest" Adapter="None Adapter">
+        <Prop LookupString="Limits.Low">-1</Prop>
+        <Prop LookupString="Limits.High">1</Prop>
+      </Step>
+      <Step Name="Test 2" Type="StringValueTest" Adapter="None Adapter">
+        <Prop LookupString="Limits.String">Comparison String</Prop>
+		<Prop LookupString="Result.String">Comparison String</Prop>
+      </Step>
+      <Step Name="Call subSequence" Type="SequenceCall" Adapter="Sequence Adapter">
+        <Prop LookupString="Module.AsSequenceCallModule.SequenceName">subSequence</Prop>
+        <Prop LookupString="Module.UseCurFile">true</Prop>
+      </Step>
+    </StepGroup>
+    <StepGroup Name="cleanup">
+      <Step Name="Cleanup" Type="Action" Adapter="None Adapter" />
+    </StepGroup>
+  </Sequence>
+  <Sequence Name="subSequence">
+    <StepGroup Name="setup" />
+    <StepGroup Name="main">
+      <Step Name="subTest 1" Type="NumericLimitTest" Adapter="None Adapter">
+        <Prop LookupString="Limits.Low">-2</Prop>
+        <Prop LookupString="Limits.High">2</Prop>
+      </Step>
+    </StepGroup>
+    <StepGroup Name="cleanup" />
+  </Sequence>
+</SequenceFile>

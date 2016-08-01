@@ -1,0 +1,284 @@
+ 001000 BEGIN, ATLAS PROGRAM 'RTDG With Manual Intervention Example' $
+
+C 
+  ********************************************************************
+  * 			SETUP STATEMENTS            	     	     *
+  ********************************************************************
+                                                                                    $
+     10 REQUIRE, 'SH', LOAD, SHORT, CNX $
+     20 ESTABLISH, BUS PROTOCOL 'RS232_1', SPEC 'RS-232',
+            STANDARD PRIMARY BUS,
+            CNX HI J3-RX-POS LO J3-RX-NEG $
+     30 ESTABLISH, BUS PROTOCOL 'RS232_2', SPEC 'RS-232',
+            STANDARD PRIMARY BUS,
+            CNX HI J3-TX-POS LO J3-TX-NEG $
+        IDENTIFY, EVENT 'MANUAL_INTERVENTION' AS MANUAL-INTERVENTION 	       $
+     40 IDENTIFY, EVENT 'EV-GT-4' AS (VOLTAGE), DC SIGNAL,
+            EQ 1 V ERRLMT +- 0.2 V, INCREASING,
+            VOLTAGE RANGE 0.0 V TO 10 V,
+            CNX HI J1-12 LO J1-21 $
+     50 IDENTIFY, EVENT 'EV-LT-3.5' AS (VOLTAGE), DC SIGNAL,
+            EQ 3.5 V ERRLMT +- 0.2 V, DECREASING,
+            VOLTAGE RANGE 0.0 V TO 10 V,
+            CNX HI J1-22 LO J1-21 $
+     60 DECLARE, CONSTANT, 'WORD_CNT' IS 4 $
+     70 DECLARE, CONSTANT, 'BIT_CNT' IS 8 $
+     80 DECLARE, VARIABLE, 'ERRIDX'IS ARRAY(1 THRU'WORD_CNT')OF INTEGER $
+     90 DECLARE, TYPE, 'DIGARRAY'
+            IS ARRAY (1 THRU 'WORD_CNT') OF STRING ('BIT_CNT') OF BIT $
+ 001100 DECLARE, VARIABLE, 'STIMDATA' IS 'DIGARRAY'
+            INITIAL = X'A0', X'A1', X'A2', X'A3' $
+     10 DECLARE, VARIABLE, 'REFDATA' IS 'DIGARRAY'
+            INITIAL = X'70', X'71', X'72', X'73' $
+     20 DECLARE, VARIABLE, 'MASK_ZERO' IS 'DIGARRAY'
+            INITIAL = X'4F', X'5F', X'6F', X'7F' $
+     30 DECLARE, VARIABLE, 'MASK_ONE' IS 'DIGARRAY'
+            INITIAL = X'4C', X'5C', X'6C', X'7C' $
+     40 DECLARE, VARIABLE, 'RESPDATA', 'ERRDATA' IS 'DIGARRAY' $
+     50 DEFINE, 'DCNF', DIGITAL CONFIGURATION $
+     60     DEFINE, 'DSRC', DIGITAL SOURCE, DC SIGNAL,
+                LEVEL-LOGIC-ZERO VOLTAGE 0.1 V,
+                LEVEL-LOGIC-ONE VOLTAGE 4.1 V,
+                CNX HI J2-D0 J2-D1 J2-D2 J2-D3 LO J2-GND $
+     70     DEFINE, 'DSEN', DIGITAL SENSOR, (VALUE), DC SIGNAL,
+                LEVEL-LOGIC-ZERO VOLTAGE 0.01 V,
+                LEVEL-LOGIC-ONE VOLTAGE 9.01 V,
+                CNX HI J2-D4 J2-D5 J2-D6 J2-D7 LO J2-GND $
+     80 END, 'DCNF' $
+     90 DECLARE, VARIABLE, 'I', 'FAULT_CNT' IS 'INTEGER' $
+ 001200 DECLARE, CONSTANT, 'BUFF_CNT' IS 5 $
+     10 DECLARE, TYPE, 'RX_TX_BUFFER'
+            IS ARRAY(1 THRU 'BUFF_CNT') OF STRING (80) OF CHAR $
+     20 DECLARE, VARIABLE, 'BUFF_TX' IS 'RX_TX_BUFFER'
+            INITIAL = C'ABCD', C'EFG', C'HIJKLM', C'', C'' $
+     30 DECLARE, VARIABLE, 'BUFF_RX' IS 'RX_TX_BUFFER'
+            INITIAL = C'', C'', C'', C'', C'' $
+     40 DEFINE, 'UART_232_TX', EXCHANGE, PROTOCOL 'RS232_1',
+            BUS-MODE TALKER-LISTENER,
+            DATA 'BUFF_TX'(1 THRU 3) $
+     50 DEFINE, 'UART_232_RX', EXCHANGE, PROTOCOL 'RS232_2',
+            BUS-MODE TALKER-LISTENER $
+     60 DECLARE, CONSTANT, 'SAMPLES' IS 10 $
+     70 DECLARE, VARIABLE,
+            'DATA' IS ARRAY(1 THRU 'SAMPLES') OF DECIMAL $
+C 
+  ********************************************************************
+  *                      MAIN PROCEDURAL SECTION                     *
+  ********************************************************************
+                                                                               $
+E100000 OUTPUT, TO 'DISPLAY', C'\ESC\[1B\ESC\[40;37mRTDG with manual intervention example \ESC\[m'$
+C analog tests                                                                 $
+     10 OUTPUT, TO 'DISPLAY', C'\ESC\[31;4;1m\LF\\LF\Analog Tests\ESC\[m' $
+     20 APPLY, DC SIGNAL,
+            VOLTAGE 24 V,
+            CURRENT MAX 1A,
+            CNX HI J1-1 LO J1-2 SENSE-HI J1-3 SENSE-LO J1-4 $
+     30 APPLY, AC SIGNAL,
+            VOLTAGE 220 V,
+            FREQ 50 HZ,
+            CURRENT MAX 200 MA,
+            CNX HI J1-12 LO J1-14 $
+     40 WAIT FOR, 1 SEC $
+     50 REMOVE, AC SIGNAL,
+            CNX HI J1-12 LO J1-14 $
+     60 APPLY, AC SIGNAL,
+            VOLTAGE 220 V,
+            FREQ 50 HZ,
+            CNX HI J1-13 LO J1-14 $
+
+C DMM: macro $
+     70 VERIFY, (VOLTAGE INTO 'MEASUREMENT'), AC SIGNAL,
+            NOM 22 V UL 23 V LL 21 V,
+            VOLTAGE RANGE 0 V TO 40 V,
+            FREQ MAX 100 HZ,
+            MAX-TIME 1.0 SEC,
+            CNX HI J1-15 LO J1-17 $
+     80 REMOVE, DC SIGNAL,
+            CNX HI J1-1 LO J1-2 SENSE-HI J1-3 SENSE-LO J1-4 $
+     90 REMOVE, AC SIGNAL,
+            FREQ 50 HZ,
+            CNX HI J1-13 LO J1-14 $
+
+C manual intervention $
+        ENABLE, EVENT 'MANUAL_INTERVENTION' 				       $
+        WAIT FOR, EVENT 'MANUAL_INTERVENTION' MAX-TIME 10 SEC 		       $
+        DISABLE, EVENT 'MANUAL_INTERVENTION' 				       $
+
+C connection tests                                                             $
+E200000 OUTPUT, TO 'DISPLAY', C'\ESC\[31;4;1m\LF\\LF\Connection Tests\ESC\[m' $
+     10 CONNECT, SHORT USING 'SH', CNX J1-22 J1-23 $
+     20 WAIT FOR, 100MSEC $
+     30 CONNECT, SHORT USING 'SH', CNX J1-22 J1-23 J1-24 $
+     40 WAIT FOR, 100MSEC $
+     50 DISCONNECT, SHORT USING 'SH', CNX J1-22 J1-23 J1-24 $
+
+C event monitor tests                                                          $
+E300000 OUTPUT, TO 'DISPLAY',
+            C'\ESC\[31;4;1m\LF\\LF\Event Monitor Tests\ESC\[m' $
+     10 APPLY, DC SIGNAL,
+            VOLTAGE 24 V,
+            CURRENT MAX 1A,
+            CNX HI J1-7 LO J1-8 SENSE-HI J1-9 SENSE-LO J1-10 $
+     20 ENABLE, EVENT 'EV-GT-4' $
+     30 ENABLE, EVENT 'EV-LT-3.5' $
+     40 SETUP, (TIME), TIME INTERVAL,
+            TIME RANGE 20 MSEC TO 1000 MSEC,
+            FROM 'EV-GT-4' TO 'EV-LT-3.5',
+            MAX-TIME 5000 MSEC $
+     50 CONNECT, (TIME), TIME INTERVAL,
+            TIME RANGE 20 MSEC TO 1000 MSEC,
+            FROM 'EV-GT-4' TO 'EV-LT-3.5',
+            MAX-TIME 5000 MSEC $
+     60 ARM, (TIME), TIME INTERVAL,
+            TIME RANGE 20 MSEC TO 1000 MSEC,
+            FROM 'EV-GT-4' TO 'EV-LT-3.5',
+            MAX-TIME 5000 MSEC $
+     70 CHANGE, DC SIGNAL,
+            VOLTAGE 12 V,
+            CURRENT MAX 1A,
+            CNX HI J1-7 LO J1-8 SENSE-HI J1-9 SENSE-LO J1-10 $
+     80 FETCH, (TIME INTO 'MEASUREMENT'), TIME INTERVAL,
+            TIME RANGE 20 MSEC TO 1000 MSEC,
+            FROM 'EV-GT-4' TO 'EV-LT-3.5',
+            MAX-TIME 5000 MSEC $
+     90 OUTPUT, TO 'DISPLAY', C'Measured value = ', 'MEASUREMENT':8, C'MSEC' $
+ 300100 DISCONNECT, (TIME), TIME INTERVAL,
+            TIME RANGE 20 MSEC TO 1000 MSEC,
+            FROM 'EV-GT-4' TO 'EV-LT-3.5',
+            MAX-TIME 5000 MSEC $
+     10 RESET, (TIME), TIME INTERVAL,
+            TIME RANGE 20 MSEC TO 1000 MSEC,
+            FROM 'EV-GT-4' TO 'EV-LT-3.5',
+            MAX-TIME 5000 MSEC $
+     20 DISABLE, EVENT 'EV-GT-4' $
+     30 DISABLE, EVENT 'EV-LT-3.5' $
+     40 REMOVE, DC SIGNAL,
+            CNX HI J1-7 LO J1-8 SENSE-HI J1-9 SENSE-LO J1-10 $
+
+C digital tests                                                                $
+E400000 OUTPUT, TO 'DISPLAY', C'\ESC\[31;4;1m\LF\\LF\Digital Tests\ESC\[m' $
+     10 APPLY, DC SIGNAL,
+            VOLTAGE 35 V,
+            CURRENT MAX 10A,
+            CNX HI J1-5 J1-7 LO J1-6 J1-8 SENSE-HI J1-9 SENSE-LO J1-10 $
+     20 ENABLE, DIGITAL CONFIGURATION 'DCNF' $
+C SENSE $
+     30 SENSE, (VALUE INTO 'RESPDATA'), ON 'DSEN'
+            CNX HI J2-D4 J2-D5 J2-D6 J2-D7 LO J2-GND $
+     40 OUTPUT, TO 'DISPLAY', C'RESPDATA:'$
+     50 FOR, 'I' = 1 THRU 'WORD_CNT', THEN $
+     60     OUTPUT, TO 'DISPLAY', C' ', 'RESPDATA'('I'):0$
+     70 END, FOR $
+     80 OUTPUT, TO 'DISPLAY', C'\LF\'$
+C STIMULATE $
+     90 OUTPUT, TO 'DISPLAY', C'STIMDATA:'$
+ 400100 FOR, 'I' = 1 THRU 'WORD_CNT', THEN $
+     10     OUTPUT, TO 'DISPLAY', C' ', 'STIMDATA'('I'):0$
+     20 END, FOR $
+     30 OUTPUT, TO 'DISPLAY', C'\LF\'$
+     40 STIMULATE, 'STIMDATA', ON 'DSRC'
+            CNX HI J2-D0 J2-D1 J2-D2 J2-D3 LO J2-GND $
+C PROVE $
+     50 OUTPUT, TO 'DISPLAY', C'REFDATA:'$
+     60 FOR, 'I' = 1 THRU 'WORD_CNT', THEN $
+     70     OUTPUT, TO 'DISPLAY', C' ', 'REFDATA'('I'):0$
+     80 END, FOR $
+     90 OUTPUT, TO 'DISPLAY', C'\LF\'$
+ 400200 OUTPUT, TO 'DISPLAY', C'MASK_ZERO:'$
+     10 FOR, 'I' = 1 THRU 'WORD_CNT', THEN $
+     20     OUTPUT, TO 'DISPLAY', C' ', 'MASK_ZERO'('I'):0$
+     30 END, FOR $
+     40 OUTPUT, TO 'DISPLAY', C'\LF\'$
+     50 OUTPUT, TO 'DISPLAY', C'MASK_ONE:'$
+     60 FOR, 'I' = 1 THRU 'WORD_CNT', THEN $
+     70     OUTPUT, TO 'DISPLAY', C' ', 'MASK_ONE'('I'):0$
+     80 END, FOR $
+     90 OUTPUT, TO 'DISPLAY', C'\LF\'$
+ 400300 PROVE, (VALUE INTO 'RESPDATA')
+            REF 'REFDATA',
+            MASK-ONE 'MASK_ONE',
+            ERROR 'ERRDATA',
+            ERROR-INDEX 'ERRIDX',
+            FAULT-COUNT 'FAULT_CNT',
+            ON 'DSEN'
+            CNX HI J2-D4 J2-D5 J2-D6 J2-D7 LO J2-GND $
+C                                                                              $
+     10 OUTPUT, TO 'DISPLAY', C'RESPDATA:'$
+     20 FOR, 'I' = 1 THRU 'WORD_CNT', THEN $
+     30     OUTPUT, TO 'DISPLAY', C' ', 'RESPDATA'('I'):0$
+     40 END, FOR $
+     50 OUTPUT, TO 'DISPLAY', C'\LF\'$
+C                                                                              $
+     60 OUTPUT, TO 'DISPLAY', C'ERRDATA:'$
+     70 FOR, 'I' = 1 THRU 'WORD_CNT', THEN $
+     80     OUTPUT, TO 'DISPLAY', C' ', 'ERRDATA'('I'):0$
+     90 END, FOR $
+ 400400 OUTPUT, TO 'DISPLAY', C'\LF\'$
+C                                                                              $
+     10 OUTPUT, TO 'DISPLAY', C'ERRIDX:'$
+     20 FOR, 'I' = 1 THRU 'WORD_CNT', THEN $
+     30     OUTPUT, TO 'DISPLAY', C' ', 'ERRIDX'('I'):0$
+     40 END, FOR $
+     50 OUTPUT, TO 'DISPLAY', C'\LF\'$
+     60 OUTPUT, TO 'DISPLAY', C'FAULT_CNT: ', 'FAULT_CNT', C'\LF\'$
+C                                                                              $
+     70 DISABLE, DIGITAL CONFIGURATION $
+     80 REMOVE, DC SIGNAL,
+            CNX HI J1-5 J1-7 LO J1-6 J1-8 SENSE-HI J1-9 SENSE-LO J1-10 $
+
+C bus testing                                                                  $
+E500000 OUTPUT, TO 'DISPLAY', C'\ESC\[31;4;1m\LF\\LF\Bus Testing\ESC\[m' $
+     10 APPLY, DC SIGNAL,
+            VOLTAGE 24 V,
+            CURRENT MAX 1A,
+            CNX HI J1-7 LO J1-8 SENSE-HI J1-9 SENSE-LO J1-10 $
+     20 OUTPUT, TO 'DISPLAY', C'BUFF_TX:'$
+     30 FOR, 'I' = 1 THRU 'BUFF_CNT', THEN $
+     40     OUTPUT, TO 'DISPLAY', C' ', 'BUFF_TX'('I'):0$
+     50 END, FOR $
+     60 OUTPUT, TO 'DISPLAY', C'\LF\'$
+     70 DO, EXCHANGE, EXCHANGE 'UART_232_TX',
+            TEST-EQUIP-ROLE MASTER,
+            PROCEED, MAX-TIME 20.2 SEC $
+     80 DO, EXCHANGE, EXCHANGE 'UART_232_RX',
+            TEST-EQUIP-ROLE MONITOR,
+            TEST-EQUIP-MONITOR DATA 'BUFF_RX'(1 THRU 5),
+            PROCEED, MAX-TIME 20.1 SEC $
+C                                                                              $
+     90 OUTPUT, TO 'DISPLAY', C'BUFF_RX:'$
+ 500100 FOR, 'I' = 1 THRU 'BUFF_CNT', THEN $
+     10     OUTPUT, TO 'DISPLAY', C' ', 'BUFF_RX'('I'):0$
+     20 END, FOR $
+     30 OUTPUT, TO 'DISPLAY', C'\LF\'$
+C                                                                              $
+     40 REMOVE, DC SIGNAL,
+            CNX HI J1-7 LO J1-8 SENSE-HI J1-9 SENSE-LO J1-10 $
+
+C matrice testing                                                              $
+E600000 OUTPUT, TO 'DISPLAY', C'\ESC\[31;4;1m\LF\\LF\Matrice Testing\ESC\[m' $
+     10 OUTPUT, TO 'DISPLAY', C'DATA:'$
+     20 FOR, 'I' = 1 THRU 'SAMPLES', THEN $
+     30     CALCULATE, 'DATA'('I') = 'I' $
+     40     OUTPUT, TO 'DISPLAY', C' ', 'DATA'('I'):4:2$
+     50 END, FOR $
+     60 OUTPUT, TO 'DISPLAY', C'\LF\'$
+     70 APPLY, WAVEFORM,
+            STIM 'DATA'(1 THRU 'SAMPLES'),
+            SAMPLE-WIDTH 1 USEC,
+            CNX HI J4-1 LO J4-2 $
+     80 MEASURE, (SAMPLE INTO 'DATA'(1 THRU 'SAMPLES')), WAVEFORM,
+            SAMPLE-WIDTH 1 USEC,
+            CNX HI J4-3 LO J4-3 $
+     90 OUTPUT, TO 'DISPLAY', C'DATA:'$
+ 600100 FOR, 'I' = 1 THRU 'SAMPLES', THEN $
+     10     OUTPUT, TO 'DISPLAY', C' ', 'DATA'('I'):4:2$
+     20 END, FOR $
+     30 OUTPUT, TO 'DISPLAY', C'\LF\'$
+     40 REMOVE, WAVEFORM,
+            STIM 'DATA'(1 THRU 'SAMPLES'),
+            SAMPLE-WIDTH 1 USEC,
+            CNX HI J4-1 LO J4-2 $
+     50 OUTPUT, TO 'DISPLAY', C'\LF\'$
+
+C end of program							 $
+E700000 TERMINATE, ATLAS PROGRAM 'RTDG With Manual Intervention Example' $

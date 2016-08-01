@@ -1,0 +1,8 @@
+Configure_VEE_Step = 132, 132, 650, 576, C
+EditModule = -25, 31, 611, 475, C, 66, 66, 584, 510, C
+EditModuleFunctions = 44, 44, 562, 488, C
+Globals = 64, 132, 693, 462, C
+Execute_VEE_Step = 41, 99, 710, 543, C
+HelperFunctions = 0, 0, 518, 444, C
+clsEmpty = 132, 174, 728, 604, C
+Module1 = 132, 132, 650, 576, C

@@ -1,0 +1,106 @@
+begin BLK = 1;
+	begin MOD = 1 20 : A1;* gang switches
+		1 to 2 and
+		3 to 4 and
+		5 to 6 and
+		7 to Wire1 via switch 1 PTH = 1;
+		9  to 10 and
+		11 to 12 via switch 2 PTH = 2;
+		13 to 14 and
+		15 to 16 via switch 3 PTH = 3;
+		17 to 18 and
+		19 to 20 via switch 4 PTH = 4;
+	end;
+
+	begin MOD = 2 41 : B1;* matrix switches
+		1:4   to  5:14 via matrix 1 PTH = 1:40;
+		15    to 16:23 via matrix 2 PTH = 41:48;
+		24    to 25:28 via matrix 3 PTH = 49:52;
+		29    to 30:33 via matrix 4 PTH = 53:56;
+*		34:37 to 38:41 via matrix 5 PTH = 57:60;// doesn't alloc individual switches
+		34    to 38:41 via matrix 5 PTH = 57:60;
+		35    to 38:41 via matrix 5 PTH = 61:64;
+		36    to 38:41 via matrix 5 PTH = 65:68;
+		37    to 38:41 via matrix 5 PTH = 69:72;
+		
+	end;
+
+	begin MOD = 3 28 : A2;* simple switches
+	 Wire1 to  2 via switch 1  PTH = 1;
+		3  to  4 via switch 2  PTH = 2;
+		5  to  6 via switch 3  PTH = 3;
+		7  to  8 via switch 4  PTH = 4;
+		9  to 10 via switch 5  PTH = 5;
+		11 to 12 via switch 6  PTH = 6;
+		13 to 14 via switch 7  PTH = 7;
+		15 to 16 via switch 8  PTH = 8;
+		17 to 18 via switch 9  PTH = 9;
+		19 to 20 via switch 10 PTH = 10;
+		21 to 22 via switch 11 PTH = 11;
+		23 to 24 via switch 12 PTH = 12;
+		25 to 26 via switch 13 PTH = 13;
+		27 to 28 via switch 14 PTH = 14;
+	end;
+
+	begin MOD = 4 8 : B2;* relay switches
+		1 to 2:3 via switch 1 PTH = 1:2;
+		4 to 5:8 via switch 2 PTH = 3:6;
+	end;
+
+	begin MOD = 5 26 : RSRC;* resources pins
+		* dc power supply
+		DCPS-HI			to 1;
+		DCPS-LO			to 2;
+		DCPS-S-HI		to 3;
+		DCPS-S-LO		to 4;
+		* ac power supply
+		ACPS-HI			to 5;
+		ACPS-LO			to 6;
+		* scope channels
+		CH1-HI			to 7;
+		CH1-LO			to 8;
+		CH2-HI			to 9;
+		CH2-LO			to 10;
+		* digital timer counter
+		DTC-HI			to 11;
+		DTC-LO			to 12;
+		* digital multimeter
+		DMM-HI			to 13;
+		DMM-LO			to 14;
+		* digital word generator
+		DWGX			to 15;
+		DWG-GND			to 16;
+		DWG-SRC-X		to 17;
+		DWG-SEN-X		to 18;
+		* serial interface module
+		SIM-TX-HI		to 19;
+		SIM-TX-LO		to 20;
+		SIM-RX-HI		to 21;
+		SIM-RX-LO		to 22;
+		* waveform transmitter-receiver
+		WSRC-HI			to 23;
+		WSRC-LO			to 24;
+		WSEN-HI			to 25;
+		WSEN-LO			to 26;
+	end;
+	
+	begin MOD = 5 13 : VRSRC;* virtual resources pins
+		* digital scope
+		CH1-OUT			to 1;
+		CH2-OUT			to 2;
+		DSP-EV-FROM		to 3;
+		DSP-EV-TO		to 4;
+		* digital word generator
+		DWG-EO			to 5;
+		DWG-EW			to 6;
+		DWG-EX			to 7;
+		DWG-SRC-EO		to 8;
+		DWG-SRC-EW		to 9;
+		DWG-SRC-EX		to 10;
+		DWG-SEN-EO		to 11;
+		DWG-SEN-EW		to 12;
+		DWG-SEN-EX		to 13;
+		NUL-EV                  to 14;
+	end;
+end;
+

@@ -1,0 +1,116 @@
+maxpathdepth = 4;
+
+\\ dcps <-> J1-1..J1-10
+from RSRC-1	to	A1-1;
+from RSRC-2	to	A1-3;
+from RSRC-3	to	A1-5;
+from RSRC-4	to	A1-7;
+
+from A1-2	to	B1-1;
+from A1-4	to	B1-2;
+from A1-6	to	B1-3;
+from A2-2	to	B1-4;\\ wire1 on this branch
+
+from B1-5	to	A2-3;
+from A2-4	to	J1-1;
+from B1-6	to	J1-2;
+from B1-7	to	J1-3;
+from B1-8	to	J1-4;
+from B1-9	to	J1-5;
+from B1-10	to	J1-6;
+from B1-11	to	J1-7;
+from B1-12	to	J1-8;
+from B1-13	to	J1-9;
+from B1-14	to	J1-10;
+
+\\ dtc <-> J1-1, J1-11
+from RSRC-11	to	J1-1;
+from RSRC-12	to	A2-5;
+from A2-6	to	J1-11;
+
+\\ acps <-> J1-12..J1-14
+from RSRC-5	to	A1-9;
+from RSRC-6	to	A1-11;
+from A1-10	to	B2-1;
+from B2-2	to	J1-12;
+from B2-3	to	J1-13;
+from A1-12	to	J1-14;
+
+\\ dmm <-> J1-15..J1-20
+from RSRC-13	to	A2-7;
+from A2-8	to	A2-9;
+from A2-8	to	A2-11;
+from A2-10	to	J1-15;
+from A2-12	to	J1-16;
+from RSRC-14	to	B2-4;
+from B2-5	to	J1-17;
+from B2-6	to	J1-18;
+from B2-7	to	J1-19;
+from B2-8	to	J1-20;
+
+\\ dsp <-> J1-12, J1-21..J1-24
+from RSRC-7	to	A1-13;
+from RSRC-8	to	A1-15;
+from RSRC-9	to	A1-17;
+from RSRC-10	to	A1-19;
+
+from A1-14	to	B2-1;
+from A1-16	to	J1-21;
+from A1-18	to	A2-13;
+from A1-18	to	A2-15;
+from A1-18	to	A2-17;
+from A2-14	to	J1-22;
+from A2-16	to	J1-23;
+from A2-18	to	J1-24;
+
+from A1-20	to	J1-21;
+
+\\ dsp virtual connections
+from VRSRC-1	to	A2-19;
+from A2-20	to	VRSRC-3;
+from VRSRC-2	to	VRSRC-4;
+
+\\ dwg <-> J2-D0..J2-D7;
+from RSRC-16	to	J2-GND;
+
+from RSRC-15	to	B1-15;
+from B1-16	to	J2-D0;
+from B1-17	to	J2-D1;
+from B1-18	to	J2-D2;
+from B1-19	to	J2-D3;
+from B1-20	to	J2-D4;
+from B1-21	to	J2-D5;
+from B1-22	to	J2-D6;
+from B1-23	to	J2-D7;
+
+from RSRC-17	to	B1-24;
+from B1-25	to	J2-D0;
+from B1-26	to	J2-D1;
+from B1-27	to	J2-D2;
+from B1-28	to	J2-D3;
+
+from RSRC-18	to	B1-29;
+from B1-30	to	J2-D4;
+from B1-31	to	J2-D5;
+from B1-32	to	J2-D6;
+from B1-33	to	J2-D7;
+
+\\ SIM <-> J3
+from RSRC-19	to	A2-21;
+from RSRC-20	to	A2-23;
+from RSRC-21	to	A2-25;
+from RSRC-22	to	A2-27;
+from A2-22	to	J3-RX-POS;
+from A2-24	to	J3-RX-NEG;
+from A2-26	to	J3-TX-POS;
+from A2-28	to	J3-TX-NEG;
+
+\\ WAVEFORM <-> J4
+from RSRC-23    to	B1-34;
+from RSRC-24    to	B1-35;
+from RSRC-25    to	B1-36;
+from RSRC-26    to	B1-37;
+from B1-38	to	J4-1;
+from B1-39	to	J4-2;
+from B1-40	to	J4-3;
+from B1-41	to	J4-4;

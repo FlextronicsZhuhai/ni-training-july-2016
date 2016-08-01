@@ -1,0 +1,5 @@
+DataASCII.txt - Sawtooth wave (256 points)
+
+Data2i.bin - Sin wave (256 points)
+
+Data4i.bin - Ramp Up (256 points)

@@ -1,0 +1,16 @@
+;       Bus Configuration File
+
+"IEEE-488 Bus"	1	MLA 30	MTA 30	gpib0	Simulation 
+"Channel"	2	
+
+DMM	BUS 1   MLA 2	MTA 2	MSA 12	;digital multimeter	(Simulation)
+DTC	BUS 1				;digital timer counter(MATE-CIIL)	(Simulation)
+
+DCPS	BUS 2	MLA 1	MTA 1	MSA 11	Simulation; DC power supply	
+ACPS	BUS 2	MLA 2	MTA 2	MSA 12	; AC power supply	
+DSP	BUS 2   MLA 3	MTA 3	MSA 13	; digital scope
+DWG	BUS 2   MLA 4	MTA 4	MSA 14	; digital word generator	
+SIM	BUS 2   MLA 5	MTA 5	MSA 15	; serial interface module	
+WAVEFORM BUS 2   MLA 6	MTA 6	MSA 16	; waveform transmitter-receiver	
+NUL     BUS 1   MLA 8   MTA 8   
+SWX	BUS 1	MLA 6	MTA 6	MSA 18	; Switching

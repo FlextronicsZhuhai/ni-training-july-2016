@@ -1,0 +1,24 @@
+[ControllerBoardTempTest]
+Class="Function"
+Prototype="void ControllerBoardTempTest(char *dmmNameIn, char *psuNameIn, int dmmChannelIn, double lineInVoltage, double *measTempOut, struct Error *errorInfo);"
+
+[VoltageOutputTest]
+Class="Function"
+Prototype="void VoltageOutputTest(char *dmmNameIn, char *psuNameIn, int dmmChannelIn, double lineInVoltage, double *ACout, struct Error *errorInfo);"
+
+[ACFrequencyTest]
+Class="Function"
+Prototype="void ACFrequencyTest(char *scopeNameIn, int scopeChannelIn, double *measFreqOut, double *measAmplOut, double *measPhaseOut, double *waveformDataOut, struct Error *errorInfo);"
+
+[PanelOutputVoltageTest]
+Class="Function"
+Prototype="void PanelOutputVoltageTest(char *dmmNameIn, int dmmChannelIn, double *measVoltageOut, struct Error *errorInfo);"
+
+[DllMain]
+Class="Function"
+Prototype="int DllMain(struct HINSTANCE__ *hinstDLL, unsigned long fdwReason, void *lpvReserved);"
+
+[DllEntryPoint]
+Class="Function"
+Prototype="int DllEntryPoint(struct HINSTANCE__ *hinstDLL, unsigned long fdwReason, void *lpvReserved);"
+

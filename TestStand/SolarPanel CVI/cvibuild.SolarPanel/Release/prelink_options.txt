@@ -1,0 +1,6 @@
+-inrc c:\dev\TestStand\SolarPanel CVI\cvibuild.SolarPanel\Release\resources.in.rc
+-outrc c:\dev\TestStand\SolarPanel CVI\cvibuild.SolarPanel\Release\resources.out.rc
+-inhdef c:\dev\TestStand\SolarPanel CVI\cvibuild.SolarPanel\Release\SolarPanel.h.hdefs
+-outdef c:\dev\TestStand\SolarPanel CVI\cvibuild.SolarPanel\Release\SolarPanel.dll.defs
+-indefprot c:\dev\TestStand\SolarPanel CVI\cvibuild.SolarPanel\Release\SolarPanel.obj.cvidefprots
+-dllName SolarPanel.dll

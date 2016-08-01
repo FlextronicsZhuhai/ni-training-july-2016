@@ -1,0 +1,23 @@
+HKCR
+{
+	Benchmark.Class.1 = s 'Class Class'
+	{
+		CLSID = s '{34D43B41-2356-4AA2-8946-A443945265CC}'
+	}
+	Benchmark.Class = s 'Class Class'
+	{
+		CLSID = s '{34D43B41-2356-4AA2-8946-A443945265CC}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {34D43B41-2356-4AA2-8946-A443945265CC} = s 'Class Class'
+		{
+			ProgID = s 'Benchmark.Class.1'
+			VersionIndependentProgID = s 'Benchmark.Class'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'both'
+			}
+		}
+	}
+}

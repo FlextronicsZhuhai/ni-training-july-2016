@@ -1,0 +1,6 @@
+LIBRARY SolarPanel
+
+EXPORTS
+ACFrequencyTest
+VoltageOutputTest
+ControllerBoardTempTest

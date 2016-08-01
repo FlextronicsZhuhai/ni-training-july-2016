@@ -1,0 +1,4 @@
+[ControllerBoardTempTest]
+Class="Function"
+Prototype="void ControllerBoardTempTest(char *dmm, char *powerSupply, double lineInVoltage, double *temperature, struct Error *errorInfo);"
+

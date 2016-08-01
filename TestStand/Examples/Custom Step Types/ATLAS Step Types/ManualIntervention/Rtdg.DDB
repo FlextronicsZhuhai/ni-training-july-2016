@@ -1,0 +1,442 @@
+*       Built In Function's
+configuration   BIF19870115;
+def, fnc, Cat   ==      1;      ** ConcatenateStrings
+def, fnc, Cmp   ==      2;      ** Compare Strings
+def, fnc, Cpy   ==      3;      ** CopyStrings
+def, fnc, Ilc   ==      4;      ** InsertLeadingCharacters
+def, fnc, Itc   ==      5;      ** InsertTrailingCharacters
+def, fnc, Itoc  ==      6;      ** IntegerToNumericString
+def, fnc, Tup   ==      7;      ** LowerCaseToUpperCase
+def, fnc, Slw   ==      8;      ** RemoveLeadingWhiteSpace
+def, fnc, Stw   ==      9;      ** RemoveTrailingWhiteSpace
+def, fnc, Rev   ==      10;     ** ReverseString
+def, fnc, Sfw   ==      11;     ** SetCurrentFieldWidth
+def, fnc, Tlo   ==      12;     ** UpperCaseToLowerCase
+def, fnc, Bic   ==      13;     ** BusInterfaceClear
+def, fnc, Bto   ==      14;     ** SetBusTimeOut
+def, fnc, Wcmd  ==      15;     ** WriteCommandString
+def, fnc, Wdat  ==      16;     ** WriteDataString
+def, fnc, Rtn   ==      17;     ** GetCurrentFunctionReturn
+def, fnc, Print ==      18;     ** Print
+def, fnc, Abort ==      19;     ** Abort
+def, fnc, Stop  ==      20;     ** Stop
+def, fnc, Apnd  ==      21;     ** AppendString
+def, fnc, Split ==      22;     ** ParseCharacters
+def, fnc, Gnum  ==      23;     ** ParseDecimalString
+def, fnc, Gint  ==      24;     ** ParseNumericString
+def, fnc, GCla  ==      25;     ** GetBusControllerListenAddress
+def, fnc, GCta  ==      26;     ** GetBusControllerTalkAddress
+def, fnc, GDla  ==      27;     ** GetBusDeviceListenAddress
+def, fnc, GDid  ==      28;     ** GetBusDeviceName
+def, fnc, GDta  ==      29;     ** GetBusDevciceTalkAddress
+def, fnc, Sdev  ==      30;     ** SetBusDeviceNumber
+def, fnc, Seoi  ==      31;     ** SetEoiLineFlag
+def, fnc, Talk  ==      32;     ** TalkToBusDevice
+def, fnc, Ctof  ==      33;     ** DecimalStringToFloat
+def, fnc, Ftoc  ==      34;     ** FloatToDecimalString
+def, fnc, Ctoi  ==      35;     ** NumericStringToInteger
+def, fnc, Sdp   ==      36;     ** SetDecimalPointFlag
+def, fnc, Sexp  ==      37;     ** SetExponentIndicator
+def, fnc, SexpS ==      38;     ** SetExponentSignFlag
+def, fnc, SexpW ==      39;     ** SetExponentWidth
+def, fnc, SfW   ==      40;     ** SetFractionWidth
+def, fnc, SiW   ==      41;     ** SetIntegerWidth
+def, fnc, SmanS ==      42;     ** SetNumberSignFlag
+def, fnc, Listn ==      43;     ** ListenToBusDevice
+def, fnc, Read  ==      44;     ** ReadDataString
+def, fnc, Dsp   ==      45;     ** Display
+def, fnc, GpK   ==      46;     ** GetPathCount
+def, fnc, GpD   ==      47;     ** GetPathData
+def, fnc, GiK   ==      48;     ** IndirectPathCount
+def, fnc, GiD   ==      49;     ** IndirectPathToDirect
+def, fnc, RBin  ==      50;     ** ReadBinary
+def, fnc, WBin  ==      51;     ** WriteBinary
+def, fnc, XtoD  ==      52;     ** HexToDigital
+def, fnc, DtoX  ==      53;     ** DigitalToHex
+def, fnc, FmtDtoS   ==  54;     ** FormatDataToString           (NEW)
+def, fnc, FmtIBPut  ==  55;     ** FormattedBufferedBusOutput   (NEW)
+def, fnc, CclrF ==      56;     ** ClearBusClearFlag
+def, fnc, CkSum  ==     57;     ** ClearGetCheckSum
+
+*DCPS dc power supply
+begin DEV DCPS using DCPS;
+	begin FNC = 1;
+		source dc signal;
+		control voltage range 0v to 50v by 0.1v errlmt +- 0.01v;
+		capability current max 12a;
+		cnx hi DCPS-HI, lo DCPS-LO, sense-hi DCPS-S-HI, sense-lo DCPS-S-LO;
+	end;
+end;
+
+*ACPS ac power supply
+begin DEV ACPS using ACPS;
+	begin FNC = 1;
+		source ac signal;
+		control 
+		{
+			voltage range 0v to 1000v by 1v;
+			freq 50hz;
+		}
+		capability current max 500ma;
+		cnx hi ACPS-HI, lo ACPS-LO;
+	end;
+end;
+
+*DTC digital timer counter
+begin DEV DTC using DTC;
+	begin FNC = 1;
+		sensor (freq) ac signal;
+		control freq range 10hz to 3khz;
+		cnx hi DTC-HI, lo DTC-LO;
+	end;
+end;
+
+*DMM digital multimeter
+def, mac, DMM_Setup(fnc, max, extra);
+int fnc;
+dec max, extra;
+{
+	if (fnc == 1)
+		FmtIBPut("('FNC=', I0, ' VLT-RNG ', F0.1, ' DC-COMP ', F0.1, '\r\n')",
+			 fnc, max, extra);
+	else if (fnc == 2)
+		FmtIBPut("('FNC=', I0, ' VLT-RNG ', F0.1, ' AC-COMP ', F0.1, '\r\n')",
+			 fnc, max, extra);
+}
+
+def, mac, DMM_Reset(fnc);
+int fnc;
+{
+	FmtIBPut("('RESET FNC=', I0, '\r\n')", fnc);
+}
+
+def, mac, DMM_Open(fnc);
+int fnc;
+{
+	FmtIBPut("('OPEN FNC=', I0, '\r\n')", fnc);
+}
+
+def, mac, DMM_Init(fnc);
+int fnc;
+{
+	FmtIBPut("('INIT FNC=', I0, '\r\n')", fnc);
+}
+
+def, mac, DMM_Fetch(fnc, @value);
+int fnc;
+dec value;
+txt result 80;
+{
+	if (fnc == 1) {
+		Dsp("DMM fnc = 1(macro) fetch\n");
+		FmtIBPut("('FETCH FNC=', I0, ' VDC\r\n')", fnc);
+		Listn(result, "Voltage DC");
+	}
+	else if (fnc == 2) {
+		Dsp("DMM fnc = 2(macro) fetch\n");
+		FmtIBPut("('FETCH FNC=', I0, ' VAC\r\n')", fnc);
+		Listn(result, "Voltage AC");
+	}
+	Ctof(result, value);
+}
+
+def, mac, DMM_Close(fnc);
+int fnc;
+{
+	FmtIBPut("('CLOSE FNC=', I0, '\r\n')", fnc);
+}
+
+begin DEV DMM;
+	reset DMM_Reset($FNC);
+	close DMM_Close($FNC);
+	init DMM_Init($FNC);
+	open DMM_Open($FNC);
+	fetch DMM_Fetch($FNC, voltage result);
+	cnx hi DMM-HI, lo DMM-LO;
+	begin FNC = 1 using DMM;
+		sensor (voltage) dc signal;
+		capability ac-comp max 1v;
+		setup DMM_Setup($FNC, voltage max : 1000.0, ac-comp max : 1.0);
+	end;
+	begin FNC = 2 using DMM;
+		sensor (voltage) ac signal;
+		control 
+		{
+			freq range 10hz to 3khz;
+			voltage range 0v to 40v;
+		}
+		setup DMM_Setup($FNC, voltage max : 1000.0, freq max : 3.0e3);
+	end;
+end;
+
+*DSP(digital scope) two event monitors, time interval sensor
+begin DEV DSP;
+	begin FNC = 10 using DSP;
+		sensor (time) time interval;
+		control 
+		{
+			time range 0.0 sec to 50.0 sec by 0.1E-6 sec errlmt +- 0.2 pc;
+			max-time max 10sec;
+			event-time-from;
+			event-time-to;
+		}
+		cnx event-time-from DSP-EV-FROM, event-time-to DSP-EV-TO;
+	end;
+
+	event monitor (voltage) dc signal;
+	control 
+	{
+		event-out;
+		voltage range 0v to 10v;
+		event-slope pos RNG = 1, neg RNG = 2;
+	}
+
+	begin FNC = 1 using DSP-CH1;
+		cnx hi CH1-HI, lo CH1-LO, event-out CH1-OUT;
+	end;
+
+	begin FNC = 2 using DSP-CH2;
+		cnx hi CH2-HI, lo CH2-LO, event-out CH2-OUT;
+	end;
+end;
+
+
+*DWG(digital word generator) digital configuration, digital source, digital sensor
+begin DEV DWG;
+	cnx lo DWG-GND;
+	begin FNC = 1 using DWG;
+		function digital configuration;
+		control 
+		{
+			 max-time range 0.1 sec to 99.9 sec;
+			 stim-rate 0 words/sec to 250 kwords/sec;
+			 event-stim;
+			 event-when;
+				 sense-rate 0 words/sec to 250 kwords/sec;
+			 sense-delay 0 sec to 10sec;
+			 fault-count range 0 to 1024;
+			 iterate max 1024 times;
+			 do-simultaneous on;
+			 do-timed-digital on, off;
+		}
+		cnx hi DWGX, 
+			event-out DWG-EO,
+			event-when DWG-EW, 
+			event-stim DWG-EX;
+	end;
+
+	control
+	{
+		type parallel;
+		level-logic-one voltage range -10 v to 10 v RNG = 2;
+		level-logic-zero voltage range -10 v to 10 v;
+		pulse-class  rz  RNG = 1, nrz RNG = 2;
+		word-length  range 1 bits to 120 bits;
+	}
+	
+	begin FNC = 2 using DWG-SRC;
+		function dc signal;
+		control 
+		{
+			 stim range 0 to 35000;
+			 repeat range 1 to 10000;
+		}
+		cnx hi DWG-SRC-X, 
+			event-out DWG-SRC-EO, 
+			event-when DWG-SRC-EW, 
+			event-stim DWG-SRC-EX;
+	end;
+	begin FNC = 3 using DWG-SEN;
+		function-value dc signal;
+		control
+		{
+			 value range 0 to 30000;
+			 ref range 0 to 30000;
+			 mask-zero    range 0 to 30000;
+			 mask-one    range 0 to 30000;
+			 error       range 0 to 30000;
+			 error-index range 0 to 1023;
+			 fault-count 1;
+			 illegal-state-indicator;
+			 event-when;
+		}
+		cnx hi DWG-SEN-X, 
+			event-out DWG-SEN-EO, 
+			event-when DWG-SEN-EW, 
+			event-stim DWG-SEN-EX;
+	end;
+end;
+
+*SIM(serial interface module) RS232 transmitter-receiver
+begin dev SIM;
+	control
+	{
+		bus-mode talker-listener;
+		bit-rate range 367.0 to 2.0e6 bits/sec by 1.0 bits/sec;
+		word-length 7 bits, 8 bits;
+	}
+	
+	begin;
+		function bus protocol;
+		control
+		{
+			wait;
+			proceed;
+			standard primary;
+			max-time range 0.0 to 9999.0 sec;
+			bus-spec rs-232;
+		}
+       
+		begin FNC = 21 using SIM-RX-BUSPRT;
+			control test-equip-role monitor;
+			cnx hi SIM-RX-HI, lo SIM-RX-LO;
+		end;
+
+		begin FNC = 22 using SIM-TX-BUSPRT;
+			control test-equip-role master;
+			cnx hi SIM-TX-HI, lo SIM-TX-LO;
+		end;
+	end;
+
+	begin;
+		function exchange;
+		control
+		{
+			test-equip-talker range 0 to 65536;
+			uut-listener range 0 to 65536;
+			data range 0 to 1024000;
+		}
+		begin FNC = 23 using SIM2-RX-EXC;
+			control test-equip-role monitor;
+			cnx hi SIM-RX-HI, lo SIM-RX-LO;
+		end;
+		begin FNC = 24 using SIM2-TX-EXC;
+			control test-equip-role master;
+			cnx hi SIM-TX-HI, lo SIM-TX-LO;
+		end;
+	end;
+end;
+*WAVEFORM waveform transmitter-receiver
+begin DEV WAVEFORM;
+	begin FNC = 1 using WAVESRC;
+		source waveform;
+        	control 
+		{
+	    		stim max 500000;
+     	    		voltage range 0 v to 10 v;
+   	    		sample-width range 1 usec to 1 sec;
+	    		freq range 1 hz to 10 khz;
+		}
+        	cnx hi WSRC-HI, lo WSRC-LO;
+    	end;
+    	begin FNC = 2 using WAVESEN;
+		sensor (sample) waveform;
+		control 
+		{
+	    		sample max 65535;
+	    		sample-width range 1 usec to 1 sec;
+	    		voltage range 0 v to 10 v;
+        	}
+        	cnx hi WSEN-HI, lo WSEN-LO;
+	end;
+end;
+*	SWITCH - TRAPS
+dcl 
+{
+	int PATHINFO(5);
+}
+
+def, mac, PATH();
+{
+	;
+}
+
+def, mac, StartCon();
+{
+*	SETDEVICE(<SWX>);
+	Dsp("Start Connect;");
+}
+
+def, mac, ProcessCon();
+txt message 100;
+txt tbuf 10;
+{
+*	SETDEVICE(<SWX>);
+	Cpy("", message);
+	Itoc(PATHINFO(3), tbuf);
+	Apnd(tbuf, message);
+	Apnd("-", message);
+	Itoc(PATHINFO(4), tbuf);
+	Apnd(tbuf, message);
+	Apnd("-", message);
+	Itoc(PATHINFO(5), tbuf);
+	Apnd(tbuf, message);
+	Apnd(";", message);
+	Dsp(message);
+}
+
+def, mac, FinishCon();
+{
+*	SETDEVICE(<SWX>);
+	Dsp("Finish Connect.\n");
+}
+
+def, mac, StartDis();
+{
+*	SETDEVICE(<SWX>);
+	Dsp("Start Disconnect;");
+}
+
+def, mac, ProcessDis();
+txt message 100;
+txt tbuf 10;
+{
+*	SETDEVICE(<SWX>);
+	Cpy("", message);
+	Itoc(PATHINFO(3), tbuf);
+	Apnd(tbuf, message);
+	Apnd("-", message);
+	Itoc(PATHINFO(4), tbuf);
+	Apnd(tbuf, message);
+	Apnd("-", message);
+	Itoc(PATHINFO(5), tbuf);
+	Apnd(tbuf, message);
+	Apnd(";", message);
+	Dsp(message);
+}
+
+def, mac, FinishDis();
+{
+*	SETDEVICE(<SWX>);
+	Dsp("Finish Disconnect.\n");
+}
+
+*
+*	RESERVED MACROS
+*
+def, mac, INITIALIZE();
+{
+	Dsp("Message from INITIALIZE (macro) \n");
+	enable 40 StartCon;
+	enable 41 ProcessCon;
+	enable 42 FinishCon;
+	enable 43 StartDis;
+	enable 44 ProcessDis;
+	enable 45 FinishDis;
+}
+
+def, mac, RESETALL();
+{
+	Dsp("Message from RESETALL(macro) \n");
+}
+
+def, mac, TERMINATE();
+{
+	Dsp("Executing TERMINATE\n");
+	disable 40;
+	disable 41;
+	disable 42;
+	disable 43;
+	disable 44;
+	disable 45;
+}

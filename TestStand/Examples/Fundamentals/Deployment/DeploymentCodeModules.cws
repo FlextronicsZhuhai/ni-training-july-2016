@@ -1,0 +1,280 @@
+[Workspace Header]
+Version = 1300
+Pathname Line0001 = "/e/p4/TestStand/Dev/6.0/App/TestStandPublic/Examples/Fundamentals/Deployment/Dep"
+Pathname Line0002 = "loymentCodeModules.cws"
+CVI Dir = "/c/program files (x86)/national instruments/cvi2013"
+CVI Shared Dir = "/C/Program Files (x86)/National Instruments/Shared/CVI"
+CVI Pub Local Dir = "/C/ProgramData/National Instruments/CVI2013"
+CVI Pub Global Dir = "/C/ProgramData/National Instruments/CVI"
+IVI Standard Root Dir = "/C/Program Files (x86)/IVI Foundation/IVI"
+IVI Standard Root 64-bit Dir = "/C/Program Files/IVI Foundation/IVI"
+VXIplug&play Framework Dir = "/C/Program Files (x86)/IVI Foundation/VISA/winnt"
+VXIplug&play Framework 64-bit Dir = "/C/Program Files/IVI Foundation/VISA/win64"
+Number of Projects = 2
+Active Project = 1
+Project 0001 = "Required.prj"
+Project 0001 Folder Include Files Collapsed = True
+Project 0001 FolderId 1 Collapsed = True
+Project 0002 = "Unused.prj"
+Drag Bar Left = 360
+Window Top = 4
+Window Left = 516
+Window Bottom = 833
+Window Right = 1114
+Maximized = False
+Maximized Children = True
+Max32 Number Of Errors = 20
+Track Include File Dependencies = True
+Prompt For Missing Includes = True
+Stop On First Error File = False
+Bring Up Err Win At Start = True
+Bring Up Err Win For Errors = False
+Save Changes Before Running = "Always"
+Save Changes Before Compiling = "Always"
+Hide Windows = False
+Break At First Statement = False
+Sort Type = "File Name"
+Number of Opened Files = 4
+Window Confinement Region Enabled = True
+MainColumnWidth = 343
+FileDateColumnWidth = 70
+FileSizeColumnWidth = 70
+
+[Project Header 0001]
+Version = 1300
+Don't Update DistKit = False
+Platform Code = 4
+Build Configuration = "Debug"
+Warn User If Debugging Release = 1
+Batch Build Release = False
+Batch Build Debug = True
+
+[Project Header 0002]
+Version = 1300
+Don't Update DistKit = False
+Platform Code = 4
+Build Configuration = "Debug"
+Warn User If Debugging Release = 1
+Batch Build Release = False
+Batch Build Debug = True
+
+[File 0001]
+Path Line0001 = "/e/p4/TestStand/Dev/6.0/App/TestStandPublic/Examples/Fundamentals/Deployment/Req"
+Path Line0002 = "uired.c"
+File Type = "CSource"
+Disk Date = 3471889017
+In Projects = "1,"
+Window Top = 92
+Window Left = 42
+Window Z-Order = 2
+Source Window State = "1,37,37,37,4,18,18,0,3,80,0,0,0,0,0,25,0,0,37,4,401,630,1,0,"
+
+[File 0002]
+Path Line0001 = "/e/p4/TestStand/Dev/6.0/App/TestStandPublic/Examples/Fundamentals/Deployment/Req"
+Path Line0002 = "uired.h"
+File Type = "Include"
+Disk Date = 3471889013
+In Projects = "1,"
+Window Top = 122
+Window Left = 58
+Window Z-Order = 3
+Source Window State = "1,34,34,34,4,31,4,0,0,80,0,0,0,0,0,25,0,0,34,17,401,630,1,0,"
+
+[File 0003]
+Path Line0001 = "/e/p4/TestStand/Dev/6.0/App/TestStandPublic/Examples/Fundamentals/Deployment/Unu"
+Path Line0002 = "sed.c"
+File Type = "CSource"
+Disk Date = 3471889018
+In Projects = "2,"
+Window Top = 32
+Window Left = 10
+Window Z-Order = 1
+Source Window State = "1,37,37,37,0,21,21,0,3,198,0,0,0,0,0,44,0,0,37,0,401,490,1,0,"
+
+[File 0004]
+Path Line0001 = "/e/p4/TestStand/Dev/6.0/App/TestStandPublic/Examples/Fundamentals/Deployment/Unu"
+Path Line0002 = "sed.h"
+File Type = "Include"
+Disk Date = 3471888917
+In Projects = "2,"
+Window Top = 62
+Window Left = 26
+Window Z-Order = 4
+Source Window State = "1,34,34,34,0,32,32,0,0,80,0,0,0,0,0,25,0,0,34,22,401,630,1,0,"
+
+[Default Build Config 0001 Debug]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = True
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Default Build Config 0001 Release]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = False
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Default Build Config 0001 Debug64]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = True
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Default Build Config 0001 Release64]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = False
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Build Dependencies 0001]
+Number of Dependencies = 0
+
+[Build Options 0001]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Execution Trace = "Disabled"
+Profile = "Disabled"
+Debugging Level = "Standard"
+Break On Library Errors = True
+Break On First Chance Exceptions = False
+
+[Execution Target 0001]
+Execution Target Address = "Local desktop computer"
+Execution Target Port = 0
+Execution Target Type = 0
+
+[SCC Options 0001]
+Use global settings = True
+SCC Provider = ""
+SCC Project = ""
+Local Path = ""
+Auxiliary Path = ""
+Perform Same Action For .h File As For .uir File = "Ask"
+Perform Same Action For .cds File As For .prj File = "Ask"
+Username = ""
+Comment = ""
+Use Default Username = False
+Use Default Comment = False
+Suppress CVI Error Messages = False
+Always show confirmation dialog = True
+
+[DLL Debugging Support 0001]
+External Process Path = ""
+
+[Command Line Args 0001]
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+
+[Default Build Config 0002 Debug]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = True
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Default Build Config 0002 Release]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = False
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Default Build Config 0002 Debug64]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = True
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Default Build Config 0002 Release64]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = False
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Build Dependencies 0002]
+Number of Dependencies = 0
+
+[Build Options 0002]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Execution Trace = "Disabled"
+Profile = "Disabled"
+Debugging Level = "Standard"
+Break On Library Errors = True
+Break On First Chance Exceptions = False
+
+[Execution Target 0002]
+Execution Target Address = "Local desktop computer"
+Execution Target Port = 0
+Execution Target Type = 0
+
+[SCC Options 0002]
+Use global settings = True
+SCC Provider = ""
+SCC Project = ""
+Local Path = ""
+Auxiliary Path = ""
+Perform Same Action For .h File As For .uir File = "Ask"
+Perform Same Action For .cds File As For .prj File = "Ask"
+Username = ""
+Comment = ""
+Use Default Username = False
+Use Default Comment = False
+Suppress CVI Error Messages = False
+Always show confirmation dialog = True
+
+[DLL Debugging Support 0002]
+External Process Path = ""
+
+[Command Line Args 0002]
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+

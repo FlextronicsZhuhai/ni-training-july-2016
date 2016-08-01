@@ -1,0 +1,159 @@
+EXERCISE 1
+----------
+3. 
+  1 control
+  5 indicators
+  1 free label
+  1 run button
+  1 icon
+  1 connector pane
+
+5. 
+  1 control
+  5 indicators
+  5 constants
+  2 free labels
+  
+
+ACTIVITY 1-3: LESSON REVIEW
+---------------------------
+1.
+  a. Front panel
+  b. Block diagram
+  d. Icon/Connector pane
+
+ACTIVITY 2-1: EXPLORING DATAFLOW
+--------------------------------
+1.
+  Either File Dialog or Simulate Signal nodes execute first
+
+2.
+  Simple Error Handler.vi node executes last
+3.
+  No
+4.
+  3
+5.
+  Yes
+6.
+  Write To Measurement File
+  Correct answer: either the Statistics Express VI or the Write To Measurement File Express VI or they execute in parallel
+7.
+  Write To Measurement File
+8.
+  Tone Measurements 2
+  Correct answer: Either of the Tone Measurement Express VIs can execute last. The Filter Express VI might execute before
+    the Tone Measurements 1 Express VI.
+
+
+ACTIVITY 3-1: REVIEW DEBUGGING TOOLS
+------------------------------------
++ Execution Highlighting
++ Single Stepping
++ Execution Highlighting
++ Probe
++ Single Stepping
+
+
+ACTIVITY 3-2: LESSON REVIEW
+---------------------------
+1.
+  a. A subVI is broken
+  c. A required subVI input is unwired
+  d. A Boolean terminal is wired to a numeric indicator
+
+2. 
+  b. Error: String
+
+3.
+  b. False
+     Both Errors and Warnings have Non-zero Status Codes
+     For Errors, Status = TRUE. For Warnings, Status = FALSE.
+
+4.
+  b. False
+     The Merge Errors Function does NOT concatenate errors. It returns the first error found. If no error is found,
+     it returns the first warning. Use it to propagate errors along wires and merge errors from different wire paths.
+
+
+
+ACTIVITY 4-1: While Loops vs. For Loops
+---------------------------------------  
+
+Scenario 1
+1.
+  num measurements == 60 or time == 60
+2.
+  60
+3.
+  Both are equally easy to implement
+
+
+
+Scenario 2
+1.
+  pressure >= 1400 psi
+2.
+  Unknown
+3.
+  While loop
+
+
+Scenario 3
+1.
+  ANSWER: 
+  While Loop: 
+    [(Last Temperature == Previous Temperature) for 2 minutes or more] &&
+    [(Last Pressure == Previous Pressure) for 2 minutes or more]
+
+2.
+  Unknown
+
+3.
+  While loop
+
+
+Scenario 4
+1.
+  Voltage == 5V
+
+2.
+  5V / 0.5V = 10 iterations
+
+3.
+  Either one
+
+
+
+ACTIVITY 5-2: LESSON REVIEW
+---------------------------
+
+1.
+  b. False
+
+2.
+  4 - 5 iterations starting from 0
+
+3.
+  b. Type Definition
+
+4.
+  d. A type-definition containing a cluster
+
+
+
+ACTIVITY 6-1: CASE STRUCTURES REVIEW
+------------------------------------
+1.
+  a. Execute one of its subdiagrams based on an input
+
+2.
+  b. One
+
+3.
+  a. Lets you wire an input value to determine which case executes
+
+4.
+  a. Lets you wire an input value to determine which case executes
+
+

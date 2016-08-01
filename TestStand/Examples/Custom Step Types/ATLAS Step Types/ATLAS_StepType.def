@@ -1,0 +1,9 @@
+; ATLAS_StepType.def : Declares the module parameters.
+
+LIBRARY      "ATLAS_StepType.DLL"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE

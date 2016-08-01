@@ -1,0 +1,9 @@
+Start Limits
+	Limits.Low	Limits.High	Limits.String
+Test Voltage at Junction A	9.000000	11.000000	
+Test Voltage at Junction B	8.500000	9.5000000	
+Test Voltage at Junction C	5.000000	7.000000	
+Test Voltage at Junction D	-3.000000	-1.000000	
+Test Voltage at Junction E	-7.000000	-5.000000	
+System Self Test			"SYSTEM OK"
+End Limits

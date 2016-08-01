@@ -1,0 +1,6 @@
+-inrc c:\dev\TestStand\CVI\cvibuild.Lesson 2-2 CVI\Debug\resources.in.rc
+-outrc c:\dev\TestStand\CVI\cvibuild.Lesson 2-2 CVI\Debug\resources.out.rc
+-inhdef c:\dev\TestStand\CVI\cvibuild.Lesson 2-2 CVI\Debug\Lesson 2-2 CVI.h.hdefs
+-outdef c:\dev\TestStand\CVI\cvibuild.Lesson 2-2 CVI\Debug\Lesson 2-2 CVI.dll.defs
+-indefprot c:\dev\TestStand\CVI\cvibuild.Lesson 2-2 CVI\Debug\Lesson 2-2 CVI.obj.cvidefprots
+-dllName Lesson_2-2_CVI.dll

@@ -1,0 +1,16 @@
+[ControllerBoardTempTest]
+Class="Function"
+Prototype="void ControllerBoardTempTest(char *dmmNameIn, char *psuNameIn, int dmmChannelIn, double lineInVoltage, double *temperature, struct Error *errorInfo);"
+
+[VoltageOutputTest]
+Class="Function"
+Prototype="void VoltageOutputTest(char *dmmNameIn, char *psuNameIn, int dmmChannelIn, double lineInVoltage, double *ACout, struct Error *errorInfo);"
+
+[ACFrequencyTest]
+Class="Function"
+Prototype="void ACFrequencyTest(char *scopeNameIn, int dmmChannelIn, double *measFreqOut, double *measAmplOut, double *measPhaseOut, double *waveformDataOut, struct Error *errorInfo);"
+
+[PanelOutputVoltageTest]
+Class="Function"
+Prototype="void PanelOutputVoltageTest(char *dmmNameIn, int dmmChannelIn, double *measVoltageOut, struct Error *errorInfo);"
+

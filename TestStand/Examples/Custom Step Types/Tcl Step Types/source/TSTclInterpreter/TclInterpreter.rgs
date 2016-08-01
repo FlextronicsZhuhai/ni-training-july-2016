@@ -1,0 +1,24 @@
+HKCR
+{
+	TSTclInterpreter.TclInterpreter.1 = s 'TclInterpreter Class'
+	{
+		CLSID = s '{78ED7630-DF3F-4492-92CE-62FD834751BB}'
+	}
+	TSTclInterpreter.TclInterpreter = s 'TclInterpreter Class'
+	{
+		CLSID = s '{78ED7630-DF3F-4492-92CE-62FD834751BB}'
+		CurVer = s 'TSTclInterpreter.TclInterpreter.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {78ED7630-DF3F-4492-92CE-62FD834751BB} = s 'TclInterpreter Class'
+		{
+			ProgID = s 'TSTclInterpreter.TclInterpreter.1'
+			VersionIndependentProgID = s 'TSTclInterpreter.TclInterpreter'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{22CA287A-FC3E-4E6F-9AA3-BC302A1D2BB1}'
+		}
+	}
+}

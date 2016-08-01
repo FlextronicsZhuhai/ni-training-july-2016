@@ -1,0 +1,60 @@
+CCFLAGS = -g ;
+HDRS = 	"C:\\Users\\Public\\Documents\\National Instruments\\TestStand 2014 (32-bit)\\AdapterSupport\\CVI"
+	"C:\\Program Files (x86)\\National Instruments\\TestStand 2014\\API\\DLLInterfaces"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr\\TestStand\\API"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\activex\\word"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\activex\\excel"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\custctrl"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\custctrl\\custsupp"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\cvirtsup"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\datasock"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\daqUtil"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\printing"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\toolbox"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\reportgen"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\localui"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\instr"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl\\custsupp"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr"
+	"C:\\ProgramData\\National Instruments\\CVI2015\\instr"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\include"
+	"C:\\ProgramData\\National Instruments\\CVI2015\\include"
+	"C:\\ProgramData\\National Instruments\\CVI\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\include\\ansi"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\include\\clang\\3.3"
+	"C:\\Program Files (x86)\\IVI Foundation\\IVI\\Include"
+	"C:\\Program Files (x86)\\IVI Foundation\\VISA\\winnt\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\MSDTRedistributables\\SDKHeaderFiles\\8.1"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr\\Driver Simulation"
+	"c:\\Program Files (x86)\\National Instruments\\CVI2015\\bin"
+	"c:\\ProgramData\\National Instruments\\CVI2015\\bin"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\Bin"
+	;
+include Jamfile_instr ;
+LOCATE on "SolarPanel.c" = "c:\\dev\\TestStand\\SolarPanel CVI" ;
+LOCATE on "SolarPanel.h" = "c:\\dev\\TestStand\\SolarPanel CVI" ;
+Object "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.obj" : "c:\\dev\\TestStand\\SolarPanel CVI\\SolarPanel.c" ;
+FILENUM on "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.obj" = 1 ;
+DEFPROTS on "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.obj" = "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.obj.cvidefprots" ;
+OUTFILE on "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.obj" = "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.obj.out" ;
+PrjObjects += "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.obj" ;
+Object "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.h.hdefs" : "c:\\dev\\TestStand\\SolarPanel CVI\\SolarPanel.h" ;
+FILENUM on "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.h.hdefs" = 2 ;
+OUTFILE on "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.h.hdefs" = "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.h.hdefs.out" ;
+PreLinkInputs += "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\resources.in.rc" ;
+PreLinkInputs += $(PrjObjects) $(InstrObjects) ;
+PreLinkOutputs += "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\resources.out.rc" ;
+PreLinkOutputs += "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.dll.defs" ;
+PreLink $(PreLinkOutputs) : $(PreLinkInputs) ;
+Depends "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.dll" : "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.dll.defs" ;
+Object "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\resources.res" : "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\resources.out.rc" ;
+Depends "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\resources.res" : $(PreLinkOutputs) ;
+Depends "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\resources.res" "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\resources.out.rc" : $(PrjObjects) $(InstrObjects) ;
+Depends "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\resources.res" : "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\manifest.xml" ;
+MainFromObjects "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.dll" : $(PrjObjects) $(InstrObjects) ;
+Depends "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.dll" : "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\link_options.txt" ;
+Depends "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.dll" : "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\dependencies.lnk.in" ;
+Depends "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.dll" : "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\resources.res" ;
+Depends all : "c:\\dev\\TestStand\\SolarPanel CVI\\cvibuild.SolarPanel\\Debug\\SolarPanel.dll" ;

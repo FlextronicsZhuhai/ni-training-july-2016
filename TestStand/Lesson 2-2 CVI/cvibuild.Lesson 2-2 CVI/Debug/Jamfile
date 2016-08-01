@@ -1,0 +1,60 @@
+CCFLAGS = -g ;
+HDRS = 	"C:\\Users\\Public\\Documents\\National Instruments\\TestStand 2014 (32-bit)\\AdapterSupport\\CVI"
+	"C:\\Program Files (x86)\\National Instruments\\TestStand 2014\\API\\DLLInterfaces"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr\\TestStand\\API"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\activex\\word"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\activex\\excel"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\custctrl"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\custctrl\\custsupp"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\cvirtsup"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\datasock"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\daqUtil"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\printing"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\toolbox"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\reportgen"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\localui"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\instr"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl\\custsupp"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr"
+	"C:\\ProgramData\\National Instruments\\CVI2015\\instr"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\include"
+	"C:\\ProgramData\\National Instruments\\CVI2015\\include"
+	"C:\\ProgramData\\National Instruments\\CVI\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\include\\ansi"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\include\\clang\\3.3"
+	"C:\\Program Files (x86)\\IVI Foundation\\IVI\\Include"
+	"C:\\Program Files (x86)\\IVI Foundation\\VISA\\winnt\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\MSDTRedistributables\\SDKHeaderFiles\\8.1"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr\\Driver Simulation"
+	"c:\\Program Files (x86)\\National Instruments\\CVI2015\\bin"
+	"c:\\ProgramData\\National Instruments\\CVI2015\\bin"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\Bin"
+	;
+include Jamfile_instr ;
+LOCATE on "Lesson 2-2 CVI.c" = "c:\\dev\\TestStand\\CVI" ;
+LOCATE on "Lesson 2-2 CVI.h" = "c:\\dev\\TestStand\\CVI" ;
+Object "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.obj" : "c:\\dev\\TestStand\\CVI\\Lesson 2-2 CVI.c" ;
+FILENUM on "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.obj" = 1 ;
+DEFPROTS on "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.obj" = "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.obj.cvidefprots" ;
+OUTFILE on "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.obj" = "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.obj.out" ;
+PrjObjects += "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.obj" ;
+Object "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.h.hdefs" : "c:\\dev\\TestStand\\CVI\\Lesson 2-2 CVI.h" ;
+FILENUM on "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.h.hdefs" = 2 ;
+OUTFILE on "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.h.hdefs" = "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.h.hdefs.out" ;
+PreLinkInputs += "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\resources.in.rc" ;
+PreLinkInputs += $(PrjObjects) $(InstrObjects) ;
+PreLinkOutputs += "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\resources.out.rc" ;
+PreLinkOutputs += "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.dll.defs" ;
+PreLink $(PreLinkOutputs) : $(PreLinkInputs) ;
+Depends "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.dll" : "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.dll.defs" ;
+Object "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\resources.res" : "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\resources.out.rc" ;
+Depends "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\resources.res" : $(PreLinkOutputs) ;
+Depends "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\resources.res" "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\resources.out.rc" : $(PrjObjects) $(InstrObjects) ;
+Depends "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\resources.res" : "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\manifest.xml" ;
+MainFromObjects "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.dll" : $(PrjObjects) $(InstrObjects) ;
+Depends "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.dll" : "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\link_options.txt" ;
+Depends "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.dll" : "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\dependencies.lnk.in" ;
+Depends "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.dll" : "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\resources.res" ;
+Depends all : "c:\\dev\\TestStand\\CVI\\cvibuild.Lesson 2-2 CVI\\Debug\\Lesson 2-2 CVI.dll" ;
